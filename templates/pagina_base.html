@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>..:: NSI TECH TALKS - {% block titulo_pagina %}{% endblock titulo_pagina%} ::..</title>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}/estilo/estilo_base.css"/>
+    {% block scripts %}
+    {% endblock scripts %}
+</head>
+<body>
+    <div class="corpo">
+            <div class="topo">
+                <div class="logo">
+                    <a href="/">
+                        <img src="{{ MEDIA_URL }}/imagens/logo.png" alt="NSI TECH TALKS" title="NSI TECH TALKS"/>
+                    </a>
+                </div>
+                <ul class="navegacao">
+                    <li>
+                        <a href="/">Página Inicial</a>
+                    </li>
+                    <li>
+                        <a href="#">Programação</a>
+                    </li>
+                    <li>
+                        <a href="#">Fotos</a>
+                    </li>
+                    <li>
+                        <a href="#">Local</a>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
+                    <li>
+                        <a href="#">Equipe</a>
+                    </li>
+                </ul>
+                <div class="cantoE"></div>
+                <div class="cantoD"></div>
+            </div>
+            <div class="conteudo">
+                {% block conteudo %}
+
+                {% endblock conteudo %}
+            </div>
+            <div class="rodape">
+                NSI - IF Fluminense - Núcleo de Pesquisa em Sistemas de Informação
+                <div class="links_rodape">
+                    <a href="#">Equipe NSI</a> |
+                    <a href="#">Equipe do Site</a>
+                </div>
+                <div class="selo_django_powered">
+                    <a href="http://www.djangoproject.com/">
+                        <img src="http://media.djangoproject.com/img/badges/djangopowered126x54.gif" style="border:0;width:61px;height:21px" alt="Powered by Django." title="Powered by Django." />
+                    </a>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

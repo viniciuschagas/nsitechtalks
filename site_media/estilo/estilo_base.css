@@ -1,0 +1,190 @@
+/* estilo base */
+body {
+    padding              : 0;
+    margin               : 0;
+    background           : #585757 url(/site_media/imagens/bgGrad.gif) repeat-x scroll 0 0;
+    background-attachment: fixed;
+    font-family: verdana;
+}
+.conteudo {
+    display         : block;
+    background-color: white;
+    /*margin-top      : 150px;*/
+    height: 100%;
+}
+
+.corpo {
+    background-color: white;
+    display         : block;
+    height          : auto;
+    left            : 50%;
+    margin-left     : -380px;
+    position        : absolute;
+    width           : 760px;
+}
+
+.topo {
+    display         : block;
+    height          : 140px;
+    left            : 50%;
+    margin-left     : -381px;
+    /*position        : fixed;*/
+    width           : 760px;
+    /*background-color: white;*/
+    z-index:4;
+}
+
+.logo {
+    width: 400px;
+    height: 110px;
+    position   : absolute;
+    left       : 50%;
+    top        : 0px;
+    margin-left: -200px;
+    z-index    : 5;
+}
+
+.logo img {
+	border: none;
+}
+
+/* Fix IE.*/
+* html .navegacao {
+    top: 65px;
+}
+
+* html .topo {
+    background-color: transparent;
+    /*position        : fixed;*/
+    height: auto;
+}
+/* end */
+
+.navegacao {
+    background-color   : #00923f;
+    display            : block;
+    height             : 80px;
+    left               : 50%;
+    line-height        : normal;
+    list-style-image   : none;
+    list-style-position: outside;
+    list-style-type    : none;
+    margin-left        : -409px;
+    padding            : 0px;
+    position           : absolute;
+    top                : 50px;
+    *top               : 65px; /* IE 7 Hack - Maldito IE */
+    white-space        : nowrap;
+    width              : 818px;
+    z-index            : 2;
+    border-right       : 1px solid white;
+}
+
+.navegacao li {
+    background-color: #00923f;
+    display         : block;
+    float           : left;
+    height          : 80px;
+    width           : 135px;
+    border-left     : 1px solid white;
+}
+
+.navegacao li a {
+    color          : white;
+    display        : block;
+    height         : 80px;
+    left           : 0px;
+    top            : 0px;
+    line-height    : 120px;
+    position       : relative;
+    text-align     : center;
+    text-decoration: none;
+    width          : 135px;
+    font-variant   : small-caps;
+    font-weight    : bold;
+    overflow: hidden;
+}
+.navegacao li:hover {
+    background-image: url(/site_media/imagens/bgmenu_ativo.png);
+    background-color: #00923f;
+}
+
+.cantoD , .cantoE {
+    display : block;
+    position: absolute;
+    top     : 145px;
+    height  : 20px;
+    width   : 33px;
+}
+
+.cantoD {
+    background-image: url("/site_media/imagens/cantoD.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 29px;
+    height: 32px;
+    right: -29px;
+    top: 142px !important;
+}
+
+* html .cantoD {
+    right: -29px;
+}
+
+.cantoE {
+    background-image: url("/site_media/imagens/cantoE.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 30px;
+    height: 32px;
+    left: -30px;
+}
+
+.rodape {
+    background-color: #00923f;
+    color: #ffffff;
+    padding:5px;
+    padding-bottom: 0px !important;
+    text-align:center;
+    clear:left;
+    font-size: small;
+}
+
+.links_rodape {
+    float:left;
+    width:450px;
+    height:20px;
+    text-align:right;
+}
+
+.links_rodape a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size: small;
+}
+
+/* fim do estilo base */
+
+.texto_pagina_principal {
+    /*border-left: 1px solid #00923f;*/
+
+    _margin-top: 180px !important;
+    /*margin-left: 335px;*/
+    padding-left: 7px;
+    padding-top: 20px;
+}
+
+.texto_pagina_principal p {
+    font-size: small;
+}
+
+.texto_pagina_principal h2, h3 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.selo_django_powered {
+    padding-top:5px;
+    text-align: right;
+    margin-right: 0px;
+}
