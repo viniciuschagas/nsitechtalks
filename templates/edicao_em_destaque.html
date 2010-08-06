@@ -1,0 +1,58 @@
+<link type="text/css" href="{{ MEDIA_URL }}/estilo/ui/themes/base/jquery.ui.all.css" rel="stylesheet" />
+<script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/ui/jquery.ui.accordion.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#edicao_em_destaque").accordion(
+            {
+                autoHeight: false,
+                collapsible: true
+            }
+        );
+	});
+    $(function() {
+		$("#palestra").accordion(
+            {
+                autoHeight: false,
+                collapsible: true
+            }
+        );
+	});
+</script>
+
+<h1>Próxima Edição</h1>
+<div id="edicao_em_destaque">
+    <h3><a href="#">Informações</a></h3>
+    <div>
+        <div>Data: {{ edicao_em_destaque.data|date:"d/m/Y" }}</div>
+        <div>Hora: {{ edicao_em_destaque.hora }}</div>
+        <div>Local: {{ edicao_em_destaque.local }}</div>
+    </div>
+    <h3><a href="#">Palestras</a></h3>
+    <div id="palestra">
+    {% for palestra in edicao_em_destaque.listar_palestras %}
+        <h3><a href="#">{{ palestra.titulo}}</a></h3>
+            <div class="palestra_aberta">
+                <div>
+                    <div>Título: {{ palestra.titulo }}</div>
+                    <div>Resumo: {{ palestra.resumo }}</div>
+                    <div>Slides: {{ palestra.link_slideshare }}</div>
+                </div>
+                <h3><a href="#">Palestrantes</a></h3>
+                <div>
+                    {% for palestrante in palestra.listar_palestrantes %}
+                        <div>{{ palestrante }}</div>
+                    {% endfor %}
+                </div>
+                <h3><a href="#">Tags</a></h3>
+                <div>
+                    {% for palavra_chave in palestra.listar_palavras_chave %}
+                        <div>{{ palavra_chave }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+    {% endfor %}
+    </div>
+</div>
