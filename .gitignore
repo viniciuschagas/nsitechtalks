@@ -2,3 +2,5 @@
 *.db
 *.kpf
 *~
+site_media/imagens/cartazes/
+site_media/imagens/palestrantes

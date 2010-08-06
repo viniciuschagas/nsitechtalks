@@ -20,7 +20,7 @@ body {
     left            : 50%;
     margin-left     : -380px;
     position        : absolute;
-    width           : 760px;
+    width           : 762px;
 }
 
 .topo {
@@ -29,7 +29,7 @@ body {
     left            : 50%;
     margin-left     : -381px;
     /*position        : fixed;*/
-    width           : 760px;
+    width           : 762px;
     /*background-color: white;*/
     z-index:4;
 }
@@ -63,19 +63,20 @@ body {
 .navegacao {
     background-color   : #00923f;
     display            : block;
-    height             : 80px;
+    height             : 40px;
     left               : 50%;
     line-height        : normal;
     list-style-image   : none;
     list-style-position: outside;
     list-style-type    : none;
-    margin-left        : -409px;
+    margin-left        : -381px;
     padding            : 0px;
     position           : absolute;
-    top                : 50px;
-    *top               : 65px; /* IE 7 Hack - Maldito IE */
+    top                : 95px;
+    *top               : 123px; /* IE 7 Hack - Maldito IE */
     white-space        : nowrap;
-    width              : 818px;
+    /*width              : 818px;*/
+    width: 761px;
     z-index            : 2;
     border-right       : 1px solid white;
 }
@@ -84,22 +85,23 @@ body {
     background-color: #00923f;
     display         : block;
     float           : left;
-    height          : 80px;
-    width           : 135px;
+    height          : 40px;
+    width           : 151px;
     border-left     : 1px solid white;
 }
 
 .navegacao li a {
     color          : white;
     display        : block;
-    height         : 80px;
+    height         : 40px;
     left           : 0px;
     top            : 0px;
-    line-height    : 120px;
+    /*line-height    : 120px;*/
+    line-height: 40px;
     position       : relative;
     text-align     : center;
     text-decoration: none;
-    width          : 135px;
+    width          : 150px;
     font-variant   : small-caps;
     font-weight    : bold;
     overflow: hidden;
@@ -166,21 +168,13 @@ body {
 /* fim do estilo base */
 
 .texto_pagina_principal {
-    /*border-left: 1px solid #00923f;*/
-
     _margin-top: 180px !important;
     /*margin-left: 335px;*/
     padding-left: 7px;
+	padding-right: 7px;
+	padding-bottom: 20px;
     padding-top: 20px;
-}
-
-.texto_pagina_principal p {
-    font-size: small;
-}
-
-.texto_pagina_principal h2, h3 {
-    text-align: center;
-    margin: 0 auto;
+	font-size: small;
 }
 
 .selo_django_powered {
