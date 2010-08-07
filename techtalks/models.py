@@ -12,6 +12,7 @@ class Edicao(models.Model):
         verbose_name='cartaz',
         upload_to='imagens/cartazes'
     )
+    em_destaque = models.BooleanField(verbose_name='destacar?',default=False)
     palestras = models.ManyToManyField('Palestra')
     fotos = models.ManyToManyField('Foto',blank=True,null=True)
     videos = models.ManyToManyField('Video',blank=True,null=True)
@@ -31,6 +32,24 @@ class Edicao(models.Model):
         
     def listar_videos(self):
         return self.videos.all()
+        
+    #TODO:Talvez transformar em um método de classe
+    def _retirar_outros_destaques(self):
+        edicoes = Edicao.objects.all()
+        for edicao in edicoes:
+            if edicao.em_destaque == True:
+                edicao.em_destaque = False
+                edicao.save()
+    
+    def destacar(self):
+        self._retirar_outros_destaques()
+        self.em_destaque = True
+        self.save()
+        
+    def save(self, *args,**kwargs):
+        if self.em_destaque == True:
+            self._retirar_outros_destaques()
+        super(Edicao,self).save(*args,**kwargs)
 
 class Palestra(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
