@@ -3,7 +3,10 @@ from django.template import RequestContext
 from techtalks.models import Edicao
 
 def index(request):
-    edicao_em_destaque = Edicao.objects.filter(em_destaque=True)[0]
+    try:
+        edicao_em_destaque = Edicao.objects.filter(status='proxima')[0]
+    except IndexError:
+        edicao_em_destaque = None
     return render_to_response(
         'index.html',
         {'edicao_em_destaque':edicao_em_destaque},
