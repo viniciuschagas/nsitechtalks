@@ -23,7 +23,7 @@ class Edicao(models.Model):
         max_length=12,
         choices=STATUS,
         default='pre_cadastro')
-    palestras = models.ManyToManyField('Palestra')
+    palestras = models.ManyToManyField('Palestra',blank=True,null=True)
     fotos = models.ManyToManyField('Foto',blank=True,null=True)
     videos = models.ManyToManyField('Video',blank=True,null=True)
     
