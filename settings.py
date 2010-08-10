@@ -37,7 +37,7 @@ USE_L10N = True
 
 MEDIA_ROOT = os.path.join(PROJECT_ROOT_PATH,'site_media')
 
-MEDIA_URL = 'site_media'
+MEDIA_URL = '/site_media'
 
 ADMIN_MEDIA_PREFIX = '/admin_media/'
 

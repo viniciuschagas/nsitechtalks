@@ -1,0 +1,18 @@
+{% extends "pagina_base.html" %}
+
+{% block titulo_pagina%}Detalhes do Palestrante{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/detalhes_palestrante.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+    <div id="detalhes_palestrante">
+        <div id="foto_palestrante">
+            <img src="{{ MEDIA_URL}}/{{ palestrante.foto }}" />
+        </div>
+        Nome: {{ palestrante.nome }}<br/>
+        O que faz: {{ palestrante.o_que_faz }}<br/>
+        Resumo da obra e vida: {{ palestrante.resumo }}<br/>
+    </div>
+{% endblock conteudo %}

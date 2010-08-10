@@ -4,6 +4,9 @@
 <head>
     <title>..:: NSI TECH TALKS - {% block titulo_pagina %}{% endblock titulo_pagina%} ::..</title>
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}/estilo/estilo_base.css"/>
+    {% block estilo_extra %}
+    {% endblock estilo_extra %}
+    
     {% block scripts %}
     {% endblock scripts %}
 </head>

@@ -37,12 +37,18 @@
 					<div>
 						<div>Título: {{ palestra.titulo }}</div>
 						<div>Resumo: {{ palestra.resumo }}</div>
-						<div>Slides: {{ palestra.link_slideshare }}</div>
+						<div>
+							{% ifnotequal palestra.link_slideshare '' %}
+								Slides: <a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a>
+							{% endifnotequal %}
+						</div>
 					</div>
 					<h3><a href="#">Palestrantes</a></h3>
 					<div>
 						{% for palestrante in palestra.listar_palestrantes %}
-							<div>{{ palestrante }}</div>
+							<div>
+								<a href="/palestrante/{{ palestrante.id }}">{{ palestrante.nome }}
+							</div>
 						{% endfor %}
 					</div>
 					<h3><a href="#">Tags</a></h3>

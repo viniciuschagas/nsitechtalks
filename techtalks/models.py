@@ -10,6 +10,7 @@ class Edicao(models.Model):
     )
     class Meta:
         ordering = ('-id',)
+        verbose_name_plural = 'Edições'
         
     data = models.DateField(verbose_name='data')
     hora = models.TimeField(verbose_name='hora')
@@ -113,7 +114,8 @@ class Palestrante(models.Model):
     )
     foto = models.ImageField(
         verbose_name='foto',
-        upload_to='imagens/palestrantes'
+        upload_to='imagens/palestrantes',
+        default='imagens/default_palestrante.png'
     )
     site = models.CharField(
         verbose_name='site',
