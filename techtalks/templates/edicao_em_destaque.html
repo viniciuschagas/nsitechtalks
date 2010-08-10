@@ -3,7 +3,7 @@
 <script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/ui/jquery-ui-1.8.2.custom.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$("#edicao_em_destaque").accordion(
+		$("#edicao").accordion(
             {
                 autoHeight: false,
                 collapsible: true
@@ -20,34 +20,34 @@
 	});
 </script>
 
-{% ifnotequal edicao_em_destaque None%}
-	<h1>Próxima Edição</h1>
-	<div id="edicao_em_destaque">
+{% ifnotequal edicao None%}
+	<h1>{{edicao}}</h1>
+	<div id="edicao">
 		<h3><a href="#">Informações</a></h3>
 		<div>
-			<div>Data: {{ edicao_em_destaque.data|date:"d/m/Y" }}</div>
-			<div>Hora: {{ edicao_em_destaque.hora }}</div>
-			<div>Local: {{ edicao_em_destaque.local }}</div>
+			<div>Data: {{ edicao.data|date:"d/m/Y" }}</div>
+			<div>Hora: {{ edicao.hora }}</div>
+			<div>Local: {{ edicao.local }}</div>
 		</div>
 		<h3><a href="#">Palestras</a></h3>
 		<div id="palestra">
-		{% for palestra in edicao_em_destaque.listar_palestras %}
+		{% for palestra in edicao.listar_palestras %}
 			<h3><a href="#">{{ palestra.titulo}}</a></h3>
 				<div class="palestra_aberta">
 					<div>
 						<div>Título: {{ palestra.titulo }}</div>
 						<div>Resumo: {{ palestra.resumo }}</div>
+						{% ifnotequal palestra.link_slideshare '' %}
 						<div>
-							{% ifnotequal palestra.link_slideshare '' %}
-								Slides: <a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a>
-							{% endifnotequal %}
+							Slides: <a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a>
 						</div>
+						{% endifnotequal %}
 					</div>
 					<h3><a href="#">Palestrantes</a></h3>
 					<div>
 						{% for palestrante in palestra.listar_palestrantes %}
 							<div>
-								<a href="/palestrante/{{ palestrante.id }}">{{ palestrante.nome }}
+								<a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}
 							</div>
 						{% endfor %}
 					</div>

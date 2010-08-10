@@ -1,0 +1,13 @@
+{% extends "pagina_base.html" %}
+
+{% block titulo_pagina%}Detalhe da Edição{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/detalhes_edicao.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+    <div id="texto_principal">
+        {% include "edicao_em_destaque.html" %}
+    </div>
+{% endblock conteudo %}

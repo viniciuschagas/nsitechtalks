@@ -5,12 +5,12 @@ from models import Edicao, Palestrante
 
 def index(request):
     try:
-        edicao_em_destaque = Edicao.objects.filter(status='proxima')[0]
+        edicao = Edicao.objects.filter(status='proxima')[0]
     except IndexError:
-        edicao_em_destaque = None
+        edicao = None
     return render_to_response(
         'index.html',
-        {'edicao_em_destaque':edicao_em_destaque},
+        {'edicao':edicao},
         context_instance=RequestContext(request)
     )
     
@@ -21,3 +21,20 @@ def palestrante(request,palestrante_id):
         {'palestrante':palestrante},
         context_instance=RequestContext(request)
     )
+
+def anteriores(request):
+    anteriores = Edicao.objects.filter(status='realizada')
+    return render_to_response(
+        'anteriores.html',
+        {'anteriores':anteriores},
+        context_instance=RequestContext(request)
+    )
+
+def detalhes_edicao(request, edicao_id):
+    edicao = Edicao.objects.get(id=edicao_id)
+    return render_to_response(
+        'detalhes_edicao.html',
+        {'edicao':edicao},
+        context_instance=RequestContext(request)
+    )
+        

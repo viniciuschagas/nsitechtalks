@@ -60,9 +60,10 @@ class Edicao(models.Model):
 class Palestra(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo')
-    link_slideshare = models.CharField(
+    link_slideshare = models.URLField(
         verbose_name='link dos slides',
-        max_length=1000
+        max_length=1000,
+        verify_exists=False
     )
     palavras_chave = models.ManyToManyField('PalavraChave')
     palestrantes = models.ManyToManyField('Palestrante')
@@ -90,9 +91,10 @@ class Foto(models.Model):
 class Video(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo',blank=True,null=True)
-    arquivo = models.CharField(
+    arquivo = models.URLField(
         verbose_name='link do vídeo',
-        max_length=1000
+        max_length=1000,
+        verify_exists=False
     )
     
     def __unicode__(self):
@@ -117,29 +119,33 @@ class Palestrante(models.Model):
         upload_to='imagens/palestrantes',
         default='imagens/default_palestrante.png'
     )
-    site = models.CharField(
+    site = models.URLField(
         verbose_name='site',
         max_length=400,
         blank=True,
-        null=True
+        null=True,
+        verify_exists=False
     )
-    github = models.CharField(
+    github = models.URLField(
         verbose_name='github',
         max_length=400,
         blank=True,
-        null=True
+        null=True,
+        verify_exists=False
     )
-    twitter = models.CharField(
+    twitter = models.URLField(
         verbose_name='twitter',
         max_length=400,
         blank=True,
-        null=True
+        null=True,
+        verify_exists=False
     )
-    slideshare = models.CharField(
+    slideshare = models.URLField(
         verbose_name='slideshare',
         max_length=400,
         blank=True,
-        null=True
+        null=True,
+        verify_exists=False
     )
     
     def __unicode__(self):

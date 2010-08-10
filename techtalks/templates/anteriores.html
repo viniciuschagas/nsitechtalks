@@ -1,0 +1,19 @@
+{% extends "pagina_base.html" %}
+
+{% block titulo_pagina%}Edições Anteriores{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/anteriores.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+    {% if anteriores %}
+        <ul id="anteriores">
+            {%for anterior in anteriores%}
+                <li><a href="/detalhes_edicao/{{anterior.id}}">{{anterior}}</a></li>
+            {%endfor%}
+        </ul>
+    {% else %}
+        <h1>Ainda não existem edições anteriores.</h1>
+    {% endif %}
+{% endblock conteudo %}
