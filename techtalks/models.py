@@ -63,7 +63,9 @@ class Palestra(models.Model):
     link_slideshare = models.URLField(
         verbose_name='link dos slides',
         max_length=1000,
-        verify_exists=False
+        verify_exists=False,
+        null=True,
+        blank=True
     )
     palavras_chave = models.ManyToManyField('PalavraChave')
     palestrantes = models.ManyToManyField('Palestrante')
