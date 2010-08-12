@@ -6,6 +6,14 @@ body {
     background-attachment: fixed;
     font-family: verdana;
 }
+
+h1 {
+	padding-left: 7px;
+	color: #00923f;
+	opacity:.9;
+	filter:alpha(opacity=90);
+}
+
 .conteudo {
     display         : block;
     background-color: white;
@@ -170,8 +178,8 @@ body {
 .texto_pagina_principal {
     _margin-top: 180px !important;
     /*margin-left: 335px;*/
-    padding-left: 7px;
-	padding-right: 7px;
+/*    padding-left: 7px;*/
+/*	padding-right: 7px;*/
 	padding-bottom: 20px;
     padding-top: 20px;
 	font-size: small;

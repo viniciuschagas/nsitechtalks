@@ -2,6 +2,26 @@
     margin: 20px;
 }
 
+#infos_palestrante {
+    /*border-top: 1px solid #00923f;*/
+    /*border-left: 1px solid #00923f;*/
+    /*border-right: 1px solid #00923f;*/
+    margin-left: 150px;
+}
+
+#infos_palestrante .info {
+    border: 1px solid #00923f;
+    margin-bottom: 2px;
+    padding: 5px;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+    background-color: #00923f;
+    color: #ffffff;
+    opacity:.7;
+	filter:alpha(opacity=70);
+}
+
 #foto_palestrante {
     width: 140px;
     height: 140px;

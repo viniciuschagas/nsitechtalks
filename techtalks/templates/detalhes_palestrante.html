@@ -7,18 +7,19 @@
 {% endblock estilo_extra %}
 
 {% block conteudo %}
+    <h1>Detalhes do Palestrante</h1>
     <div id="detalhes_palestrante">
         <div id="foto_palestrante">
             <img src="{{ MEDIA_URL}}/{{ palestrante.foto }}" />
         </div>
         <div id="infos_palestrante">
-            <div>Nome: {{ palestrante.nome }}</div>
-            <div>O que faz: {{ palestrante.o_que_faz }}</div>
-            <div>Resumo da vida e obra: {{ palestrante.resumo }}</div>
-            <div>Site: <a href="{{ palestrante.site }}">{{ palestrante.site }}</a></div>
-            <div>github: <a href="{{ palestrante.github }}">{{ palestrante.github }}</a></div>
-            <div>Twitter: <a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></div>
-            <div>Slideshare: <a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</a></div>
+            <div class="info">Nome: {{ palestrante.nome }}</div>
+            <div class="info">O que faz: {{ palestrante.o_que_faz|linebreaksbr }}</div>
+            <div class="info">Resumo da vida e obra: {{ palestrante.resumo|linebreaksbr }}</div>
+            <div class="info">Site: <a href="{{ palestrante.site }}">{{ palestrante.site }}</a></div>
+            <div class="info">github: <a href="{{ palestrante.github }}">{{ palestrante.github }}</a></div>
+            <div class="info">Twitter: <a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></div>
+            <div class="info">Slideshare: <a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</a></div>
         </div>
     </div>
 {% endblock conteudo %}
