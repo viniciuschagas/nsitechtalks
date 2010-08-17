@@ -7,19 +7,20 @@
 {% endblock estilo_extra %}
 
 {% block conteudo %}
-    <h1>Detalhes do Palestrante</h1>
+    <!--<h1>Detalhes do Palestrante</h1>-->
+    <div id="teste">Detalhes do Palestrante</div>
     <div id="detalhes_palestrante">
         <div id="foto_palestrante">
             <img src="{{ MEDIA_URL}}/{{ palestrante.foto }}" />
         </div>
         <div id="infos_palestrante">
-            <div class="info">Nome: {{ palestrante.nome }}</div>
-            <div class="info">O que faz: {{ palestrante.o_que_faz|linebreaksbr }}</div>
-            <div class="info">Resumo da vida e obra: {{ palestrante.resumo|linebreaksbr }}</div>
-            <div class="info">Site: <a href="{{ palestrante.site }}">{{ palestrante.site }}</a></div>
-            <div class="info">github: <a href="{{ palestrante.github }}">{{ palestrante.github }}</a></div>
-            <div class="info">Twitter: <a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></div>
-            <div class="info">Slideshare: <a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</a></div>
+            <div class="info">Nome: <span class="destaque">{{ palestrante.nome }}</span></div>
+            <div class="info">O que faz: <span class="destaque">{{ palestrante.o_que_faz|linebreaksbr }}</span></div>
+            <div class="info">Resumo da vida e obra: <span class="destaque">{{ palestrante.resumo|linebreaksbr }}</span></div>
+            <div class="info">Site: <span class="destaque"><a href="{{ palestrante.site }}">{{ palestrante.site }}</a></span></div>
+            <div class="info">github: <span class="destaque"><a href="{{ palestrante.github }}">{{ palestrante.github }}</a></span></div>
+            <div class="info">Twitter: <span class="destaque"><a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></span></div>
+            <div class="info">Slideshare: <span class="destaque"><a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</span></a></div>
         </div>
     </div>
 {% endblock conteudo %}

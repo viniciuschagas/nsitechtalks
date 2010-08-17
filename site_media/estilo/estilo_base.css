@@ -1,8 +1,8 @@
 /* estilo base */
 body {
-    padding              : 0;
-    margin               : 0;
-    background           : #585757 url(/site_media/imagens/bgGrad.gif) repeat-x scroll 0 0;
+    padding: 0;
+    margin: 0;
+    background: #585757 url(/site_media/imagens/bgGrad.gif) repeat-x scroll 0 0;
     background-attachment: fixed;
     font-family: verdana;
 }
@@ -10,46 +10,41 @@ body {
 h1 {
 	padding-left: 7px;
 	color: #00923f;
-	opacity:.9;
-	filter:alpha(opacity=90);
 }
 
 .conteudo {
-    display         : block;
+    display: block;
     background-color: white;
-    /*margin-top      : 150px;*/
     height: 100%;
 }
 
 .corpo {
     background-color: white;
-    display         : block;
-    height          : auto;
-    left            : 50%;
-    margin-left     : -380px;
-    position        : absolute;
-    width           : 762px;
+    display: block;
+    height: auto;
+    left: 50%;
+    margin-left: -380px;
+    position: absolute;
+    width: 762px;
 }
 
 .topo {
-    display         : block;
-    height          : 140px;
-    left            : 50%;
-    margin-left     : -381px;
-    /*position        : fixed;*/
-    width           : 762px;
-    /*background-color: white;*/
+    display: block;
+    height: 140px;
+    left: 50%;
+    margin-left: -381px;
+    width: 762px;
     z-index:4;
 }
 
 .logo {
     width: 400px;
     height: 110px;
-    position   : absolute;
-    left       : 50%;
-    top        : 0px;
+    position: absolute;
+    left: 50%;
+    top: 0px;
     margin-left: -200px;
-    z-index    : 5;
+    z-index: 5;
 }
 
 .logo img {
@@ -63,55 +58,62 @@ h1 {
 
 * html .topo {
     background-color: transparent;
-    /*position        : fixed;*/
     height: auto;
 }
 /* end */
 
 .navegacao {
-    background-color   : #00923f;
-    display            : block;
-    height             : 40px;
-    left               : 50%;
-    line-height        : normal;
-    list-style-image   : none;
+    background-color: #00923f;
+    display: block;
+    height: 40px;
+    left: 50%;
+    line-height: normal;
+    list-style-image: none;
     list-style-position: outside;
-    list-style-type    : none;
-    margin-left        : -381px;
-    padding            : 0px;
-    position           : absolute;
-    top                : 95px;
-    *top               : 123px; /* IE 7 Hack - Maldito IE */
-    white-space        : nowrap;
-    /*width              : 818px;*/
-    width: 761px;
-    z-index            : 2;
-    border-right       : 1px solid white;
+    list-style-type: none;
+    margin-left: -380px;
+    padding: 0px;
+    position: absolute;
+    top: 95px;
+    *top: 123px; /* IE 7 Hack - Maldito IE */
+    white-space: nowrap;
+    width: 760px;
+    z-index: 2;
+    border-right: 1px solid white;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
 }
 
 .navegacao li {
     background-color: #00923f;
-    display         : block;
-    float           : left;
-    height          : 40px;
-    width           : 151px;
-    border-left     : 1px solid white;
+    display: block;
+    float: left;
+    height: 40px;
+    width: 151px;
+    border-left: 1px solid white;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.navegacao li#principal {
+	border-left: none !important;
 }
 
 .navegacao li a {
-    color          : white;
-    display        : block;
-    height         : 40px;
-    left           : 0px;
-    top            : 0px;
-    /*line-height    : 120px;*/
+    color: white;
+    display: block;
+    height: 40px;
+    left: 0px;
+    top: 0px;
     line-height: 40px;
-    position       : relative;
-    text-align     : center;
+    position: relative;
+    text-align: center;
     text-decoration: none;
-    width          : 150px;
-    font-variant   : small-caps;
-    font-weight    : bold;
+    width: 150px;
+    font-variant: small-caps;
+    font-weight: bold;
     overflow: hidden;
 }
 .navegacao li:hover {
@@ -122,9 +124,9 @@ h1 {
 .cantoD , .cantoE {
     display : block;
     position: absolute;
-    top     : 145px;
-    height  : 20px;
-    width   : 33px;
+    top: 145px;
+    height: 20px;
+    width: 33px;
 }
 
 .cantoD {
@@ -177,10 +179,7 @@ h1 {
 
 .texto_pagina_principal {
     _margin-top: 180px !important;
-    /*margin-left: 335px;*/
-/*    padding-left: 7px;*/
-/*	padding-right: 7px;*/
-	padding-bottom: 20px;
+    padding-bottom: 20px;
     padding-top: 20px;
 	font-size: small;
 }

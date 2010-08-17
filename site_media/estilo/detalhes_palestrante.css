@@ -1,36 +1,63 @@
 #detalhes_palestrante {
-    margin: 20px;
+    /*margin: 10px;*/
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
 }
 
 #infos_palestrante {
     /*border-top: 1px solid #00923f;*/
     /*border-left: 1px solid #00923f;*/
     /*border-right: 1px solid #00923f;*/
-    margin-left: 150px;
+    margin-left: 155px;
+    margin-right: 5px;
+    padding-top: 8px;
+    padding-bottom: 5px;
 }
 
 #infos_palestrante .info {
-    border: 1px solid #00923f;
-    margin-bottom: 2px;
+    border: 1px solid #ffffff;
+    margin-bottom: 3px;
     padding: 5px;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
     background-color: #00923f;
     color: #ffffff;
-    opacity:.7;
-	filter:alpha(opacity=70);
+}
+
+#infos_palestrante .info .destaque {
+    font-weight: bold;
 }
 
 #foto_palestrante {
     width: 140px;
     height: 140px;
     float: left;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin-top: 8px;
+    margin-left: 8px;
 }
 
 #foto_palestrante img {
     width: 140px;
     height: 140px;
+}
+
+#teste {
+    margin-top: 20px;
+    margin-left: 10px;
+    height: 25px;
+    width: 195px;
+    position: relative;
+    top: 5px;
+    padding: 5px;
+    color: #ffffff;
+    background-color: #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
 }
