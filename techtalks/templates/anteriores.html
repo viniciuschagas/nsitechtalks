@@ -3,10 +3,11 @@
 {% block titulo_pagina%}Edições Anteriores{% endblock titulo_pagina %}
 
 {% block estilo_extra %}
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/anteriores.css" />
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/anteriores.css" />
 {% endblock estilo_extra %}
 
 {% block conteudo %}
+    <h1>Edições Anteriores</h1>
     {% if anteriores %}
         <ul id="anteriores">
             {%for anterior in anteriores%}
