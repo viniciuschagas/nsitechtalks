@@ -3,11 +3,13 @@
 {% block titulo_pagina%}Detalhe da Edição{% endblock titulo_pagina %}
 
 {% block estilo_extra %}
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/detalhes_edicao.css" />
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/detalhes_edicao.css" />
 {% endblock estilo_extra %}
 
 {% block conteudo %}
     <div id="texto_principal">
+        <h1>Detalhes de Edição Anterior</h1>
         {% include "edicao_em_destaque.html" %}
     </div>
 {% endblock conteudo %}
