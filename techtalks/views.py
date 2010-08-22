@@ -23,7 +23,7 @@ def palestrante(request,palestrante_id):
     )
 
 def anteriores(request):
-    anteriores = Edicao.objects.filter(status='realizada')
+    anteriores = Edicao.objects.filter(status='realizada').order_by("id")
     return render_to_response(
         'anteriores.html',
         {'anteriores':anteriores},
@@ -36,5 +36,4 @@ def detalhes_edicao(request, edicao_id):
         'detalhes_edicao.html',
         {'edicao':edicao},
         context_instance=RequestContext(request)
-    )
-        
+    )  

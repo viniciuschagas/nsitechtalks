@@ -1,4 +1,5 @@
 {% extends "pagina_base.html" %}
+{% load pagination_tags %}
 
 {% block titulo_pagina%}Edições Anteriores{% endblock titulo_pagina %}
 
@@ -9,11 +10,13 @@
 {% block conteudo %}
     <h1>Edições Anteriores</h1>
     {% if anteriores %}
+        {% autopaginate anteriores 10 %}
         <ul id="anteriores">
             {%for anterior in anteriores%}
                 <li><a href="/detalhes_edicao/{{anterior.id}}">{{anterior}}</a></li>
             {%endfor%}
         </ul>
+        {% paginate %}
     {% else %}
         <h1>Ainda não existem edições anteriores.</h1>
     {% endif %}
