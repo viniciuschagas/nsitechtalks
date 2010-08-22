@@ -26,9 +26,14 @@
 	<div id="edicao">
 		<h3><a href="#">Informações</a></h3>
 		<div>
-			<div>Data: {{ edicao.data|date:"d/m/Y" }}</div>
-			<div>Hora: {{ edicao.hora }}</div>
-			<div>Local: {{ edicao.local }}</div>
+			<div id="dados">
+				<div>Data: {{ edicao.data|date:"d/m/Y" }}</div>
+				<div>Hora: {{ edicao.hora }}</div>
+				<div>Local: {{ edicao.local }}</div>
+			</div>
+			<div id="cartaz">
+				<div><img src="{{ MEDIA_URL }}/{{ edicao.cartaz }}" /></div>
+			</div>
 		</div>
 		<h3><a href="#">Palestras</a></h3>
 		<div id="palestra">

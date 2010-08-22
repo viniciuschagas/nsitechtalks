@@ -2,3 +2,12 @@
     padding-left: 7px;
     padding-right: 7px;
 }
+
+#dados {
+    float: left;
+    padding-right: 30px;
+}
+
+#cartaz img {
+    width: 450px;
+}
