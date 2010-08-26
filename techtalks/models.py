@@ -24,9 +24,9 @@ class Edicao(models.Model):
         max_length=12,
         choices=STATUS,
         default='pre_cadastro')
-    palestras = models.ManyToManyField('Palestra',blank=True,null=True)
-    fotos = models.ManyToManyField('Foto',blank=True,null=True)
-    videos = models.ManyToManyField('Video',blank=True,null=True)
+    #palestras = models.ManyToManyField('Palestra',blank=True,null=True)
+    #fotos = models.ManyToManyField('Foto',blank=True,null=True)
+    #videos = models.ManyToManyField('Video',blank=True,null=True)
     
     def __unicode__(self):
         titulo = str(self.id)+u'ª Edição - ('
@@ -36,13 +36,13 @@ class Edicao(models.Model):
         return titulo
     
     def listar_palestras(self):
-        return self.palestras.all()
+        return self.palestra_set.all()
     
     def listar_fotos(self):
-        return self.fotos.all()
+        return self.foto_set.all()
         
     def listar_videos(self):
-        return self.videos.all()
+        return self.video_set.all()
         
     #TODO:Talvez transformar em um método de classe
     def _retirar_outras_como_proxima(self):
@@ -60,6 +60,7 @@ class Edicao(models.Model):
 class Palestra(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo')
+    edicao = models.ForeignKey(Edicao)
     link_slideshare = models.URLField(
         verbose_name='link dos slides',
         max_length=1000,
@@ -82,6 +83,7 @@ class Palestra(models.Model):
 class Foto(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo',blank=True,null=True)
+    edicao = models.ForeignKey(Edicao)
     arquivo = models.ImageField(
         verbose_name='arquivo',
         upload_to='imagens/fotos'
@@ -93,6 +95,7 @@ class Foto(models.Model):
 class Video(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo',blank=True,null=True)
+    edicao = models.ForeignKey(Edicao)
     arquivo = models.URLField(
         verbose_name='link do vídeo',
         max_length=1000,
