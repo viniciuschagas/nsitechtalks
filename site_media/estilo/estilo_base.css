@@ -83,6 +83,7 @@ h1 {
 	-moz-border-radius:5px;
 	-khtml-border-radius:5px;
 	-webkit-border-radius:5px;
+	border-radius:5px;
 }
 
 .navegacao li {
@@ -95,6 +96,7 @@ h1 {
 	-moz-border-radius:5px;
 	-khtml-border-radius:5px;
 	-webkit-border-radius:5px;
+	border-radius:5px;
 }
 
 .navegacao li#principal {
