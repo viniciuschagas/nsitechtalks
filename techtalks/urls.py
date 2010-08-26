@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     (r'^contato/$', 'techtalks.views.contato'),
     (r'^sucesso_contato/$','django.views.generic.simple.direct_to_template',
         {'template':'sucesso_contato.html'}),
+    (r'^equipe/$','techtalks.views.equipe'),
     
 )
 

@@ -1,0 +1,59 @@
+.fomentador {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.titulo_equipe {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 25px;
+    width: 390px;
+    position: relative;
+    top: 5px;
+    padding: 5px;
+    color: #ffffff;
+    background-color: #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+    border-radius:4px;
+}
+
+.equipe {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+.membro {
+    /*margin-left: 155px;*/
+    margin-right: 5px;
+    margin-bottom: 3px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #ffffff;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+    border-radius:4px;
+    background-color: #00923f;
+    color: #ffffff;
+}

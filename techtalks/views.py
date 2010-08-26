@@ -64,3 +64,9 @@ def contato(request):
             {'form':form},
             context_instance=RequestContext(request)
         )
+        
+def equipe(request):
+    return render_to_response(
+        'equipe.html',
+        context_instance=RequestContext(request)
+    )
