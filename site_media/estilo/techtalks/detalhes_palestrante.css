@@ -30,6 +30,15 @@
     color: #ffffff;
 }
 
+#infos_palestrante .info a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+#infos_palestrante .info a:hover {
+	text-decoration: underline;
+}
+
 #infos_palestrante .info .destaque {
     font-weight: bold;
 }
