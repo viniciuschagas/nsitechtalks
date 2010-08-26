@@ -1,0 +1,28 @@
+{% extends "pagina_base.html" %}
+
+{% block titulo_pagina%}Contato Com a Organizaç&atilde;o{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/contato.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+    <h1>Entre em Contato Conosco</h1>
+    <div id="formulario_div">
+        <form action="" method="post">{% csrf_token %}
+            {% for field in form %}
+                <div class="campo_div">
+                    <div class="label">{{ field.label_tag }}:</div>
+                    <div class="campo">
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                </div>
+            {% endfor %}
+            <div id="campo_submit">
+                <input type="submit" value=" Enviar " />
+            </div>
+        </form>
+    </div>
+{% endblock conteudo %}

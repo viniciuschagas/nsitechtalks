@@ -1,0 +1,50 @@
+.campo_div {
+    padding: 7px;
+}
+
+.campo_div .label {
+    float: left;
+    text-align: right;
+    width: 100px;
+    color: #00923f;
+    font-weight: bold;
+}
+
+.campo_div .campo {
+    margin-left: 110px;
+}
+
+form input[type='text'] {
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border: 1px solid #aaa9a9;
+    height: 18px;
+    width: 400px;
+}
+
+input[type='submit'] {
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+
+#id_mensagem {
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border: 1px solid #aaa9a9;
+    width: 400px;
+}
+
+#campo_submit {
+    margin-left: 455px;
+    margin-bottom: 7px;
+}
+
+.errorlist {
+    color: #ff0000;
+}
