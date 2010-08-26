@@ -1,10 +1,14 @@
-ul {
+ul#anteriores {
     color: #00923f;
 }
 
-ul a {
+ul#anteriores a {
     color: #00923f;
     font-weight: bold;
+}
+
+ul#anteriores li {
+    padding-bottom: 5px;
 }
 
 .pagination {
