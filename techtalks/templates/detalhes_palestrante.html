@@ -14,13 +14,13 @@
             <img src="{{ MEDIA_URL}}/{{ palestrante.foto }}" />
         </div>
         <div id="infos_palestrante">
-            <div class="info">Nome: <span class="destaque">{{ palestrante.nome }}</span></div>
-            <div class="info">O que faz: <span class="destaque">{{ palestrante.o_que_faz|linebreaksbr }}</span></div>
-            <div class="info">Resumo da vida e obra: <span class="destaque">{{ palestrante.resumo|linebreaksbr }}</span></div>
-            <div class="info">Site: <span class="destaque"><a href="{{ palestrante.site }}">{{ palestrante.site }}</a></span></div>
-            <div class="info">github: <span class="destaque"><a href="{{ palestrante.github }}">{{ palestrante.github }}</a></span></div>
-            <div class="info">Twitter: <span class="destaque"><a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></span></div>
-            <div class="info">Slideshare: <span class="destaque"><a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</span></a></div>
+            <div class="info"><span class="titulo_info">Nome:</span> <span class="destaque">{{ palestrante.nome }}</span></div>
+            <div class="info"><span class="titulo_info">O que faz:</span> <span class="destaque">{{ palestrante.o_que_faz|linebreaksbr }}</span></div>
+            <div class="info"><span class="titulo_info">Resumo da vida e obra:</span> <span class="destaque">{{ palestrante.resumo|linebreaksbr }}</span></div>
+            <div class="info"><span class="titulo_info">Site:</span> <span class="destaque"><a href="{{ palestrante.site }}">{{ palestrante.site }}</a></span></div>
+            <div class="info"><span class="titulo_info">github:</span> <span class="destaque"><a href="{{ palestrante.github }}">{{ palestrante.github }}</a></span></div>
+            <div class="info"><span class="titulo_info">Twitter:</span> <span class="destaque"><a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></span></div>
+            <div class="info"><span class="titulo_info">Slideshare:</span> <span class="destaque"><a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</span></a></div>
         </div>
     </div>
 {% endblock conteudo %}
