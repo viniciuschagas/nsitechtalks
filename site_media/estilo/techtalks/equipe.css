@@ -4,6 +4,7 @@
     margin-bottom: 10px;
     padding: 5px;
     background-color: #00923f;
+	font-weight: bold;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -20,13 +21,15 @@
     width: 390px;
     position: relative;
     top: 5px;
-    padding: 5px;
-    color: #ffffff;
+	padding-top: 8px !important;
+    padding-left: 5px;
     background-color: #00923f;
+    color: #ffffff;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
     border-radius:4px;
+	z-index: 1;
 }
 
 .equipe {
@@ -34,26 +37,21 @@
     margin-right: 10px;
     margin-bottom: 10px;
     padding: 5px;
-    background-color: #00923f;
+    /*background-color: #00923f;*/
+    border: 1px solid #00923f;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
 	border-radius:4px;
+	z-index: 2;
 }
 
 .membro {
-    /*margin-left: 155px;*/
     margin-right: 5px;
     margin-bottom: 3px;
     padding-top: 8px;
     padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    border: 1px solid #ffffff;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
-    border-radius:4px;
-    background-color: #00923f;
-    color: #ffffff;
+    color: #00923f;
 }
