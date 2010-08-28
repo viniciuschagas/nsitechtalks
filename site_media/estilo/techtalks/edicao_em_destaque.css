@@ -4,10 +4,73 @@
 }
 
 #dados {
-    float: left;
-    padding-right: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #00923f;
+}
+
+#dados_palestras {
+    padding: 10px;
+    color: #00923f;
+}
+
+#dados_palestras a {
+    text-decoration: none;
+    color: #00923f;
+}
+
+#dados_palestras a:hover {
+    text-decoration: underline;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+#cartaz {
+    width: 400px;
+    padding: 10px;
 }
 
 #cartaz img {
-    width: 450px;
+    width: 400px;
+}
+
+.titulo_destaque {
+    margin-top: 10px;
+    height: 25px;
+    width: auto;
+    position: relative;
+    top: 5px;
+    padding-top: 8px !important;
+    padding: 5px;
+    color: #ffffff;
+    background-color: #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+.destaque {
+    margin-bottom: 10px;
+    border: 1px solid #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+#destaque_palestras {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #00923f;
+	font-weight: bold;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
 }

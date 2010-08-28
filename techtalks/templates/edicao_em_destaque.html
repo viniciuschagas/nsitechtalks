@@ -1,69 +1,47 @@
 <link type="text/css" href="{{ MEDIA_URL }}/estilo/ui/themes/base/jquery.ui.all.css" rel="stylesheet" />
 <link type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/edicao_em_destaque.css" rel="stylesheet" />
-<script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/jquery-1.4.2.js"></script>
-<script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/ui/jquery-ui-1.8.2.custom.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$("#edicao").accordion(
-            {
-                autoHeight: false,
-                collapsible: true
-            }
-        );
-	});
-    $(function() {
-		$("#palestra").accordion(
-            {
-                autoHeight: false,
-                collapsible: true
-            }
-        );
-	});
-</script>
 
 {% ifnotequal edicao None%}
-	<h1>{{edicao}}</h1>
+	<h2>{{edicao.id}}ª Edição - {{ edicao.data|date:"d/m/Y" }}</h2>
 	<div id="edicao">
-		<h3><a href="#">Informações</a></h3>
-		<div>
+		<div class="titulo_destaque">Informações Principais</div>
+		<div class="destaque">
 			<div id="dados">
-				<div>Data: {{ edicao.data|date:"d/m/Y" }}</div>
-				<div>Hora: {{ edicao.hora }}</div>
-				<div>Local: {{ edicao.local }}</div>
+				<div>Data: <span class="negrito">{{ edicao.data|date:"d/m/Y" }}</span></div>
+				<div>Hora: <span class="negrito">{{ edicao.hora }}</span></div>
+				<div>Local: <span class="negrito">{{ edicao.local }}</span></div>
 			</div>
 			<div id="cartaz">
-				<div><img src="{{ MEDIA_URL }}/{{ edicao.cartaz }}" /></div>
+				<img src="{{ MEDIA_URL }}/{{ edicao.cartaz }}" />
 			</div>
 		</div>
-		<h3><a href="#">Palestras</a></h3>
+		<div id="destaque_palestras">Palestras</div>
 		<div id="palestra">
 		{% for palestra in edicao.listar_palestras %}
-			<h3><a href="#">{{ palestra.titulo}}</a></h3>
-				<div class="palestra_aberta">
-					<div>
-						<div>Título: {{ palestra.titulo }}</div>
-						<div>Resumo: {{ palestra.resumo|linebreaksbr }}</div>
-						{% ifnotequal palestra.link_slideshare '' %}
+			<div class="titulo_destaque">{{ palestra.titulo}}</div>
+			<div class="destaque">
+				<div id="dados_palestras">
+					<div>Título: <span class="negrito">{{ palestra.titulo }}</span></div>
+					<div>Resumo: <span class="negrito">{{ palestra.resumo|linebreaksbr }}</div>
+					{% ifnotequal palestra.link_slideshare '' %}
 						<div>
-							Slides: <a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a>
+							Slides: <span class="negrito"><a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a></span>
 						</div>
-						{% endifnotequal %}
-					</div>
-					<h3><a href="#">Palestrantes</a></h3>
+					{% endifnotequal %}
 					<div>
+						Palestrante(s):
 						{% for palestrante in palestra.listar_palestrantes %}
-							<div>
-								<a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}
-							</div>
+							<span class="negrito"><a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a></span>,
 						{% endfor %}
 					</div>
-					<h3><a href="#">Tags</a></h3>
 					<div>
+						Tags:
 						{% for palavra_chave in palestra.listar_palavras_chave %}
-							<div>{{ palavra_chave }}</div>
+							<span class="negrito"><a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.titulo %}">{{ palavra_chave }}</a></span>,
 						{% endfor %}
 					</div>
 				</div>
+			</div>
 		{% endfor %}
 		</div>
 	</div>

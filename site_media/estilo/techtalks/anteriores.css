@@ -5,6 +5,11 @@ ul#anteriores {
 ul#anteriores a {
     color: #00923f;
     font-weight: bold;
+    text-decoration: none;
+}
+
+ul#anteriores a:hover {
+    text-decoration: underline;
 }
 
 ul#anteriores li {

@@ -12,6 +12,13 @@ h1 {
 	color: #00923f;
 }
 
+h2 {
+	padding-left: 7px !important;
+	color: #00923f;
+	margin:0;
+	padding:0;
+}
+
 .conteudo {
     display: block;
     background-color: white;
@@ -180,10 +187,10 @@ h1 {
 /* fim do estilo base */
 
 .texto_pagina_principal {
-    _margin-top: 180px !important;
-    padding-bottom: 20px;
-    padding-top: 20px;
-	font-size: small;
+    /*_margin-top: 180px !important;*/
+    /*padding-bottom: 20px;*/
+    /*padding-top: 20px;*/
+	/*font-size: small;*/
 }
 
 .selo_django_powered {

@@ -13,7 +13,7 @@
         {% autopaginate anteriores 10 %}
         <ul id="anteriores">
             {%for anterior in anteriores%}
-                <li><a href="/detalhes_edicao/{{anterior.id}}">{{anterior}}</a></li>
+                <li><a href="{% url techtalks.views.detalhes_edicao anterior.id %}">{{anterior.id}}ª Edição - {{ anterior.data|date:"d/m/Y" }}</a></li>
             {%endfor%}
         </ul>
         {% paginate %}
