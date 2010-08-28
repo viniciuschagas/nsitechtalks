@@ -1,0 +1,37 @@
+{% extends "pagina_base.html" %}
+
+{% block titulo_pagina%}Detalhes da Palestra {{ palestra.titulo }}{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/detalhes_palestra.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+<h1>Detalhes da Palestra {{ palestra.titulo }}</h1>
+<div id="palestra">
+    <div class="titulo_destaque">{{ palestra.titulo}}</div>
+    <div class="destaque">
+        <div id="dados_palestras">
+            <div>Título: <span class="negrito">{{ palestra.titulo }}</span></div>
+            <div>Resumo: <span class="negrito">{{ palestra.resumo|linebreaksbr }}</div>
+            {% ifnotequal palestra.link_slideshare '' %}
+                <div>
+                    Slides: <span class="negrito"><a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a></span>
+                </div>
+            {% endifnotequal %}
+            <div>
+                Palestrante(s):
+                {% for palestrante in palestra.listar_palestrantes %}
+                    <span class="negrito"><a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a></span>,
+                {% endfor %}
+            </div>
+            <div>
+                Tags:
+                {% for palavra_chave in palestra.listar_palavras_chave %}
+                    <span class="negrito"><a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.titulo %}">{{ palavra_chave }}</a></span>,
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

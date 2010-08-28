@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, HttpResponse
-from models import Edicao, Palestrante
+from models import Edicao, Palestrante, PalavraChave, Palestra
 from forms import FormularioDeContato
 
 def index(request):
@@ -41,6 +41,14 @@ def detalhes_edicao(request, edicao_id):
         context_instance=RequestContext(request)
     )
     
+def detalhes_palestra(request, palestra_id):
+    palestra = Palestra.objects.get(id=palestra_id)
+    return render_to_response(
+        'detalhes_palestra.html',
+        {'palestra':palestra},
+        context_instance=RequestContext(request)
+    )
+    
 def contato(request):
     if request.method  == 'POST':
         formulario_contato = FormularioDeContato(request.POST)
@@ -68,5 +76,14 @@ def contato(request):
 def equipe(request):
     return render_to_response(
         'equipe.html',
+        context_instance=RequestContext(request)
+    )
+    
+def buscar_palestrar_por_tag(request,tag):
+    palavra_chave = PalavraChave.objects.get(titulo=tag)
+    palestras = Palestra.objects.filter(palavras_chave=palavra_chave)
+    return render_to_response(
+        'buscar_palestras_por_tag.html',
+        {'palestras':palestras,'tag':tag},
         context_instance=RequestContext(request)
     )

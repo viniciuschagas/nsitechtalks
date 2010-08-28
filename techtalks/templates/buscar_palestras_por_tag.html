@@ -1,0 +1,23 @@
+{% extends "pagina_base.html" %}
+{% load pagination_tags %}
+
+{% block titulo_pagina%}Resultados da busca pela tag {{ tag }}{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/resultado_filtro_por_tags.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+    <h1>Resultados da busca pela tag {{ tag }}</h1>
+    <div class="resultados">
+        {% if palestras%}
+            {% autopaginate palestras 10 %}
+            <ul id="resultados">
+            {% for palestra in palestras %}
+                <li><a href="{% url techtalks.views.detalhes_palestra palestra.id %}">{{ palestra.titulo }}</a></li>
+            {% endfor %}
+            </ul>
+            {% paginate %}
+        {% endif %}
+    </div>
+{% endblock conteudo %}
