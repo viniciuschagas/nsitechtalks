@@ -1,0 +1,47 @@
+.foto {
+    float: left;
+    padding: 7px;
+    margin-top: -20px;
+}
+
+.foto img {
+    width: 350px;
+}
+
+.pagination {
+    clear: both;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 21px;
+    font-family: sans-serif, helvetica;
+}
+
+.pagination .prev,.pagination .next {
+    color:#00923f;
+}
+
+.pagination .page {
+    color:#00923f;
+    text-decoration: none;
+}
+
+.pagination .page:hover {
+    text-decoration: underline;
+}
+
+.pagination .current {
+    color:#00523f;
+}
+
+.pagination .current:hover {
+    text-decoration: none;
+}
+
+.pagination .disabled {
+    visibility: hidden;
+}
+
+.arquivos {
+    padding: 7px;
+    margin-top: -20px;
+}

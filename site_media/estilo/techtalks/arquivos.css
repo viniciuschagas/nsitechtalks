@@ -1,0 +1,118 @@
+ul#edicoes_realizadas {
+    color: #00923f;
+}
+
+ul#edicoes_realizadas a {
+    color: #00923f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul#edicoes_realizadas a:hover {
+    text-decoration: underline;
+}
+
+ul#edicoes_realizadas li {
+    padding-bottom: 5px;
+}
+
+.pagination {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 21px;
+    font-family: sans-serif, helvetica;
+}
+
+.pagination .prev,.pagination .next {
+    color:#00923f;
+}
+
+.pagination .page {
+    color:#00923f;
+    text-decoration: none;
+}
+
+.pagination .page:hover {
+    text-decoration: underline;
+}
+
+.pagination .current {
+    color:#00523f;
+}
+
+.pagination .current:hover {
+    text-decoration: none;
+}
+
+.pagination .disabled {
+    visibility: hidden;
+}
+
+.arquivos {
+    padding: 7px;
+    margin-top: -20px;
+}
+
+.fotos {
+    width: 360px;
+    float:left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-right: 3px;
+    border: 1px solid #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	z-index: 2;
+}
+
+.outros_arquivos {
+    width: 360px;
+    margin-left: 374px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-right: 3px;
+    border: 1px solid #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	z-index: 2;
+}
+
+#fotos .titulo {
+    margin-top: 10px;
+    /*margin-left: 10px;*/
+    height: 25px;
+    width: 150px;
+    position: relative;
+    top: 5px;
+	padding-top: 8px !important;
+    padding-left: 5px;
+    background-color: #00923f;
+    color: #ffffff;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+    border-radius:4px;
+	z-index: 1;
+}
+
+#outros_arquivos .titulo {
+    margin-top: -33px;
+    margin-left: 374px;
+    height: 25px;
+    width: 150px;
+    position: relative;
+    top: 5px;
+	padding-top: 8px !important;
+    padding-left: 5px;
+    background-color: #00923f;
+    color: #ffffff;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+    border-radius:4px;
+	z-index: 1;
+}

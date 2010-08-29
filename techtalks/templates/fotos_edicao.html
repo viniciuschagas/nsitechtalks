@@ -1,0 +1,19 @@
+{% extends "pagina_base.html" %}
+{% load pagination_tags %}
+
+{% block titulo_pagina%}Fotos da {{ edicao.id }}ª edição{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/fotos_edicao.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+<h1>Fotos da {{ edicao.id }}ª edição</h1>
+<div id="fotos">
+    {% autopaginate fotos 10 %}
+    {% for foto in fotos %}
+        <div class="foto"><img src="{{ MEDIA_URL }}{{ foto.arquivo.url }}" /></div>
+    {% endfor %}
+    {% paginate %}
+</div>
+{% endblock conteudo %}
