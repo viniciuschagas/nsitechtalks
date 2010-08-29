@@ -49,6 +49,26 @@ def detalhes_palestra(request, palestra_id):
         context_instance=RequestContext(request)
     )
     
+def arquivos(request):
+    edicoes_realizadas = Edicao.objects.filter(status='realizada').order_by("id")
+    return render_to_response(
+        'arquivos.html',
+        {'edicoes_realizadas':edicoes_realizadas},
+        context_instance=RequestContext(request)
+    )
+    
+def fotos_edicao(request,edicao_id):
+    edicao = Edicao.objects.get(id=edicao_id)
+    fotos = edicao.listar_fotos()
+    return render_to_response(
+        'fotos_edicao.html',
+        {'fotos':fotos,'edicao':edicao},
+        context_instance=RequestContext(request)
+    )
+
+def videos_edicao(request,edicao_id):
+    pass
+    
 def contato(request):
     if request.method  == 'POST':
         formulario_contato = FormularioDeContato(request.POST)
