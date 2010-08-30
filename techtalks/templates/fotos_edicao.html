@@ -9,11 +9,15 @@
 
 {% block conteudo %}
 <h1>Fotos da {{ edicao.id }}ª edição</h1>
-<div id="fotos">
-    {% autopaginate fotos 10 %}
-    {% for foto in fotos %}
-        <div class="foto"><img src="{{ MEDIA_URL }}{{ foto.arquivo.url }}" /></div>
-    {% endfor %}
-    {% paginate %}
-</div>
+{% if fotos %}
+    <div id="fotos">
+        {% autopaginate fotos 4 %}
+        {% for foto in fotos %}
+            <div class="foto"><img src="{{ MEDIA_URL }}{{ foto.arquivo.url }}" /></div>
+        {% endfor %}
+        {% paginate %}
+    </div>
+{% else %}
+<h2>Ainda não existem fotos cadastradas para esta edição.</h2>
+{% endif %}
 {% endblock conteudo %}

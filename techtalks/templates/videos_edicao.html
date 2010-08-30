@@ -1,0 +1,24 @@
+{% extends "pagina_base.html" %}
+{% load pagination_tags %}
+
+{% block titulo_pagina%}Vídeos da {{ edicao.id }}ª edição{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/videos_edicao.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+<h1>Vídeos da {{ edicao.id }}ª edição</h1>
+{% if videos %}
+    <div id="videos">
+        {% autopaginate videos 10 %}
+        <ul>
+        {% for video in videos %}
+            <li class="video">{{ video.titulo }} - <a href="{{ video.arquivo }}" target="_blank"/>ver</a></li>
+        {% endfor %}
+        {% paginate %}
+    </div>
+{% else %}
+<h2>Ainda não existem vídeos cadastrados para esta edição.</h2>
+{% endif %}
+{% endblock conteudo %}

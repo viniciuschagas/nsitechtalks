@@ -67,7 +67,13 @@ def fotos_edicao(request,edicao_id):
     )
 
 def videos_edicao(request,edicao_id):
-    pass
+    edicao = Edicao.objects.get(id=edicao_id)
+    videos = edicao.listar_videos()
+    return render_to_response(
+        'videos_edicao.html',
+        {'videos':videos,'edicao':edicao},
+        context_instance=RequestContext(request)
+    )
     
 def contato(request):
     if request.method  == 'POST':

@@ -1,17 +1,19 @@
-#fotos {
+#videos {
     padding: 7px;
     margin-top: -20px;
 }
-.foto {
-    float: left;
+
+.video {
     padding-left: 5px;
     padding-right: 3px;
     padding-bottom: 3px !important;
     padding-top: 2px !important;
+    color:#00923f;
+    font-weight: bold;
 }
 
-.foto img {
-    width: 350px;
+.video a {
+    color:#00923f;
 }
 
 .pagination {
