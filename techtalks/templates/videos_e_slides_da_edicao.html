@@ -1,0 +1,31 @@
+{% extends "pagina_base.html" %}
+
+{% block titulo_pagina%}Vídeos e Slides da {{ edicao.id }}ª edição{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/videos_e_slides_da_edicao.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+<h1>Vídeos e Slides da {{ edicao.id }}ª edição</h1>
+{% if palestras %}
+    <div id="arquivos">
+        {% for palestra in palestras %}
+            <div class="titulo">{{ palestra.titulo }}</div>
+            <div class="video_e_slide">
+                <div class="video">
+                    {{ palestra.listar_videos.0.retornar_embed|safe }}
+                </div>
+                <div class="slide_div">
+                    <div class="slide">{{ palestra.retornar_slide_embeded.0|safe }}</div>
+                    <div class="slide_url">
+                        <a href="{{ palestra.retornar_slide_embeded.1 }}">Link da apresentaçao no Slideshare</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+<h2>Ainda não existem arquivos cadastrados para esta edição.</h2>
+{% endif %}
+{% endblock conteudo %}

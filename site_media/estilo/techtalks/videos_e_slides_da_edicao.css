@@ -1,0 +1,91 @@
+#arquivos {
+    padding: 7px;
+    margin-top: -20px;
+}
+
+.titulo {
+    margin-top: 10px;
+    margin-right: 10px;
+    height: 25px;
+    position: relative;
+    top: 5px;
+	padding-top: 8px !important;
+    padding-left: 5px;
+    background-color: #00923f;
+    color: #ffffff;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+    border-radius:4px;
+	z-index: 1;
+}
+
+.video_e_slide {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-right: 3px;
+    padding-top: 10px;
+    border: 1px solid #00923f;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+.video {
+    padding-left: 5px;
+    padding-right: 3px;
+    padding-bottom: 3px !important;
+    padding-top: 2px !important;
+    color:#00923f;
+    font-weight: bold;
+    float: left;
+    width: 360px;
+}
+
+.slide_div {
+    width: 360px;
+    margin-left: 365px;
+    margin-top: 2px;
+}
+
+.slide_url {
+    padding-left: 5px;
+}
+
+.slide_url a {
+    color:#00923f;
+}
+
+.pagination {
+    clear: both;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 21px;
+    font-family: sans-serif, helvetica;
+}
+
+.pagination .prev,.pagination .next {
+    color:#00923f;
+}
+
+.pagination .page {
+    color:#00923f;
+    text-decoration: none;
+}
+
+.pagination .page:hover {
+    text-decoration: underline;
+}
+
+.pagination .current {
+    color:#00523f;
+}
+
+.pagination .current:hover {
+    text-decoration: none;
+}
+
+.pagination .disabled {
+    visibility: hidden;
+}

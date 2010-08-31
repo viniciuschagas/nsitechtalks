@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from datetime import date
 from django.db import models
+from utils.pyslideshare.pyslideshare import pyslideshare
+from utils.pyslideshare_configurations import API_KEY, SECRET_KEY
 
 class Edicao(models.Model):
     STATUS = (
@@ -61,10 +63,8 @@ class Palestra(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo')
     edicao = models.ForeignKey(Edicao)
-    link_slideshare = models.URLField(
-        verbose_name='link dos slides',
-        max_length=1000,
-        verify_exists=False,
+    id_slideshare = models.IntegerField(
+        verbose_name='Id dos slides',
         null=True,
         blank=True
     )
@@ -79,6 +79,32 @@ class Palestra(models.Model):
         
     def listar_palavras_chave(self):
         return self.palavras_chave.all()
+        
+    def listar_videos(self):
+        return self.video_set.all()
+        
+    def retornar_slide_embeded(self):
+        api_key = API_KEY
+        secret_key = SECRET_KEY
+        slides_client = pyslideshare(locals(),verbose=True)
+        slide = slides_client.get_slideshow(slideshow_id=self.id_slideshare)
+        location = slide.items()[0][1]['Slideshow']['Location']['value']
+        embed_code = '<object id="__sse%s" width="350" height="292">\
+                        <param name="movie"\
+                            value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=%s&stripped_title=a" />\
+                        <param name="allowFullScreen" value="true"/>\
+                        <param name="allowScriptAccess" value="always"/>\
+                        <embed name="__sse%s"\
+                            src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=%s&stripped_title=a"\
+                            type="application/x-shockwave-flash"\
+                            allowscriptaccess="always"\
+                            allowfullscreen="true"\
+                            width="350"\
+                            height="292">\
+                        </embed>\
+                    </object>' % (self.id_slideshare, location, self.id_slideshare, location)
+        slide_url = slide.items()[0][1]['Slideshow']['Permalink']['value']
+        return (embed_code,slide_url)
     
 class Foto(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
@@ -96,14 +122,19 @@ class Video(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
     resumo = models.TextField(verbose_name='resumo',blank=True,null=True)
     edicao = models.ForeignKey(Edicao)
-    arquivo = models.URLField(
-        verbose_name='link do vídeo',
-        max_length=1000,
-        verify_exists=False
+    palestra = models.ForeignKey(Palestra,blank=True,null=True)
+    id_video = models.CharField(
+        verbose_name='Id do vídeo',
+        max_length=15
     )
     
     def __unicode__(self):
         return self.titulo
+    
+    def retornar_embed(self):
+        return '<iframe src="http://player.vimeo.com/video/%s?portrait=0"\
+                width="350" height="197"\
+                frameborder="0"></iframe>' % self.id_video
     
 class PalavraChave(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)

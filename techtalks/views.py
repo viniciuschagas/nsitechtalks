@@ -66,12 +66,12 @@ def fotos_edicao(request,edicao_id):
         context_instance=RequestContext(request)
     )
 
-def videos_edicao(request,edicao_id):
+def videos_e_slides_da_edicao(request,edicao_id):
     edicao = Edicao.objects.get(id=edicao_id)
-    videos = edicao.listar_videos()
+    palestras = edicao.listar_palestras()
     return render_to_response(
-        'videos_edicao.html',
-        {'videos':videos,'edicao':edicao},
+        'videos_e_slides_da_edicao.html',
+        {'palestras':palestras,'edicao':edicao},
         context_instance=RequestContext(request)
     )
     
@@ -83,7 +83,7 @@ def contato(request):
             email = request.POST.get('email')
             assunto = request.POST.get('assunto')
             mensagem = request.POST.get('mensagem')
-            send_mail(assunto,mensagem,email,['email@server.com'],fail_silently=False)
+            send_mail(assunto,mensagem,email,['nsitechtalks@gmail.com'],fail_silently=False)
             return HttpResponseRedirect('/sucesso_contato/')
         else:
             return render_to_response(
