@@ -45,12 +45,12 @@ h2 {
 }
 
 .logo {
-    width: 400px;
+    width: 500px;
     height: 110px;
     position: absolute;
     left: 50%;
     top: 0px;
-    margin-left: -200px;
+    margin-left: -250px;
     z-index: 5;
 }
 
