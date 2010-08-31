@@ -22,11 +22,6 @@
 				<div id="dados_palestras">
 					<div>Título: <span class="negrito">{{ palestra.titulo }}</span></div>
 					<div>Resumo: <span class="negrito">{{ palestra.resumo|linebreaksbr }}</div>
-					{% ifnotequal palestra.link_slideshare '' %}
-						<div>
-							Slides: <span class="negrito"><a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a></span>
-						</div>
-					{% endifnotequal %}
 					<div>
 						Palestrante(s):
 						{% for palestrante in palestra.listar_palestrantes %}
