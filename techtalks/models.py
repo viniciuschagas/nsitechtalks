@@ -86,7 +86,7 @@ class Palestra(models.Model):
     def retornar_slide_embeded(self):
         api_key = API_KEY
         secret_key = SECRET_KEY
-        slides_client = pyslideshare(locals(),verbose=True)
+        slides_client = pyslideshare(locals(),verbose=False)
         slide = slides_client.get_slideshow(slideshow_id=self.id_slideshare)
         location = slide.items()[0][1]['Slideshow']['Location']['value']
         embed_code = '<object id="__sse%s" width="350" height="292">\

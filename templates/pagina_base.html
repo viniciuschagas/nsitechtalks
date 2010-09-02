@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
-<head>
-    <title>..:: NSI TECH TALKS - {% block titulo_pagina %}{% endblock titulo_pagina%} ::..</title>
-    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}/estilo/estilo_base.css"/>
-    {% block estilo_extra %}
-    {% endblock estilo_extra %}
-    
-    {% block scripts %}
-    {% endblock scripts %}
-</head>
-<body>
-    <div class="corpo">
-            <div class="topo">
-                <div class="logo">
-                    <a href="/">
-                        <img src="{{ MEDIA_URL }}/imagens/logo.png" alt="NSI TECH TALKS" title="NSI TECH TALKS"/>
-                    </a>
-                </div>
-                <ul class="navegacao">
+    <head>
+        <title>..:: NSI TECH TALKS - {% block titulo_pagina %}{% endblock titulo_pagina%} ::..</title>
+        <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}/estilo/estilo_base.css"/>
+        {% block estilo_extra %}
+        {% endblock estilo_extra %}
+        
+        {% block scripts %}
+        {% endblock scripts %}
+    </head>
+    <body>
+        <div class="topo">
+            <div class="logo">
+                <a href="/">
+                    <img src="{{ MEDIA_URL }}/imagens/logo.png" alt="NSI TECH TALKS" title="NSI TECH TALKS"/>
+                </a>
+            </div>
+            <div class="navegacao">
+                <ul id="navegacao">
                     <li id="principal">
                         <a href="/">Página Inicial</a>
                     </li>
@@ -35,26 +35,28 @@
                         <a href="/equipe/">Equipe</a>
                     </li>
                 </ul>
-                <!--<div class="cantoE"></div>-->
-                <!--<div class="cantoD"></div>-->
             </div>
-            <div class="conteudo">
-                {% block conteudo %}
+        </div>
+        <div class="conteudo">
+            {% block conteudo %}
 
-                {% endblock conteudo %}
-            </div>
-            <div class="rodape">
-                NSI - IF Fluminense - Núcleo de Pesquisa em Sistemas de Informação
+            {% endblock conteudo %}
+        </div>
+        <div class="rodape">
+            <div class="infos">
+                <div>
+                    NSI - Instituto Federal Fluminense - Núcleo de Pesquisa em Sistemas de Informação
+                </div>
                 <div class="links_rodape">
                     <a href="/equipe/">Equipe NSI</a> |
                     <a href="/">Equipe do Site</a>
                 </div>
-                <div class="selo_django_powered">
-                    <a href="http://www.djangoproject.com/">
-                        <img src="{{ MEDIA_URL }}/imagens/djangopowered126x54.gif" style="border:0;width:61px;height:21px" alt="Powered by Django." title="Powered by Django." />
-                    </a>
-                </div>
+            </div>
+            <div class="selo_django_powered">
+                <a href="http://www.djangoproject.com/">
+                    <img src="{{ MEDIA_URL }}/imagens/djangopowered126x54.gif" style="border:0;width:100px;height:43px" alt="Powered by Django." title="Powered by Django." />
+                </a>
             </div>
         </div>
-</body>
+    </body>
 </html>

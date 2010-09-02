@@ -74,3 +74,16 @@
     color: #ffffff;
     font-weight: bold;
 }
+
+#edicao_indefinida {
+    margin-bottom: 10px;
+}
+
+#edicao_indefinida #texto {
+    color: #00923f;
+    font-size: 25px;
+    width: 600px;
+    position: relative;
+    top: -130px;
+    left: 200px;
+}

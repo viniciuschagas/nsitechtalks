@@ -40,5 +40,10 @@
 		</div>
 	</div>
 {% else %}
-	<h1>Ainda não existe uma próxima edição definida. Aguarde...</h1>
+	<div id="edicao_indefinida">
+		<img src="{{ MEDIA_URL }}/imagens/sinal-de-alerta.jpg" />
+		<div id="texto">
+			Ainda não existe uma próxima edição definida. Aguarde...
+		</div>
+	</div>
 {% endifnotequal %}

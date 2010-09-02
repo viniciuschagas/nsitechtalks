@@ -2,14 +2,19 @@
 body {
     padding: 0;
     margin: 0;
-    background: #585757 url(/site_media/imagens/bgGrad.gif) repeat-x scroll 0 0;
-    background-attachment: fixed;
+    background: transparent url("/site_media/imagens/bgGrad.gif") repeat-x scroll 0 0;
     font-family: verdana;
 }
 
 h1 {
 	padding-left: 7px;
 	color: #00923f;
+	border: 1px solid #00923f;
+	/*border-left: 1px solid #00923f;*/
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
 }
 
 h2 {
@@ -19,98 +24,67 @@ h2 {
 	padding:0;
 }
 
-.conteudo {
-    display: block;
-    background-color: white;
-    height: 100%;
-}
-
-.corpo {
-    background-color: white;
-    display: block;
-    height: auto;
-    left: 50%;
-    margin-left: -380px;
-    position: absolute;
-    width: 762px;
-}
-
 .topo {
-    display: block;
-    height: 140px;
-    left: 50%;
-    margin-left: -381px;
-    width: 762px;
-    z-index:4;
+	background-color: #00923f;
+    height: 70px;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
 }
 
 .logo {
-    width: 500px;
-    height: 110px;
-    position: absolute;
-    left: 50%;
-    top: 0px;
-    margin-left: -250px;
-    z-index: 5;
+    width: 300px;
+    height: 70px;
+	float: left;
 }
 
 .logo img {
 	border: none;
 }
 
-/* Fix IE.*/
-* html .navegacao {
-    top: 65px;
-}
-
-* html .topo {
-    background-color: transparent;
-    height: auto;
-}
-/* end */
-
 .navegacao {
+	margin-left: 30%;
+	position: relative;
+	top: 15px;
+}
+
+ul#navegacao {
     background-color: #00923f;
     display: block;
     height: 40px;
-    left: 50%;
     line-height: normal;
     list-style-image: none;
     list-style-position: outside;
     list-style-type: none;
-    margin-left: -380px;
     padding: 0px;
-    position: absolute;
-    top: 95px;
-    *top: 123px; /* IE 7 Hack - Maldito IE */
+	margin: 0px;
+	text-align: center;
     white-space: nowrap;
-    width: 760px;
-    z-index: 2;
-    border-right: 1px solid white;
+    border-right: 1px solid green;
 	-moz-border-radius:5px;
 	-khtml-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
 }
 
-.navegacao li {
+ul#navegacao li {
     background-color: #00923f;
     display: block;
     float: left;
     height: 40px;
-    width: 151px;
-    border-left: 1px solid white;
+    border-left: 1px solid green;
 	-moz-border-radius:5px;
 	-khtml-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
 }
 
-.navegacao li#principal {
+ul#navegacao li#principal {
 	border-left: none !important;
 }
 
-.navegacao li a {
+ul#navegacao li a {
     color: white;
     display: block;
     height: 40px;
@@ -120,62 +94,47 @@ h2 {
     position: relative;
     text-align: center;
     text-decoration: none;
-    width: 150px;
+    width:140px;
     font-variant: small-caps;
     font-weight: bold;
     overflow: hidden;
 }
-.navegacao li:hover {
-    background-image: url(/site_media/imagens/bgmenu_ativo.png);
-    background-color: #00923f;
+
+ul#navegacao li a:hover{
+	color: #00923f;
+}
+ul#navegacao li:hover {
+    background-color: #ffffff;
+	border: 1px solid #00923f;
+	position: relative;
+	top: -1px;
+	border-right: none !important;
+	
 }
 
-.cantoD , .cantoE {
-    display : block;
-    position: absolute;
-    top: 145px;
-    height: 20px;
-    width: 33px;
-}
-
-.cantoD {
-    background-image: url("/site_media/imagens/cantoD.png");
-    background-repeat: no-repeat;
-    background-color: transparent;
-    width: 29px;
-    height: 32px;
-    right: -29px;
-    top: 142px !important;
-}
-
-* html .cantoD {
-    right: -29px;
-}
-
-.cantoE {
-    background-image: url("/site_media/imagens/cantoE.png");
-    background-repeat: no-repeat;
-    background-color: transparent;
-    width: 30px;
-    height: 32px;
-    left: -30px;
+.conteudo {
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .rodape {
     background-color: #00923f;
     color: #ffffff;
     padding:5px;
-    padding-bottom: 0px !important;
     text-align:center;
     clear:left;
     font-size: small;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
 }
 
 .links_rodape {
-    float:left;
-    width:450px;
+    /*float:left;*/
+    /*width:450px;*/
     height:20px;
-    text-align:right;
+    text-align:center;
 }
 
 .links_rodape a{
@@ -184,17 +143,12 @@ h2 {
     font-size: small;
 }
 
-/* fim do estilo base */
-
-.texto_pagina_principal {
-    /*_margin-top: 180px !important;*/
-    /*padding-bottom: 20px;*/
-    /*padding-top: 20px;*/
-	/*font-size: small;*/
-}
-
 .selo_django_powered {
-    padding-top:5px;
-    text-align: right;
-    margin-right: 0px;
+	width: 100px;
+	height: 43px;
+	float: right;
+	position: relative;
+	top: -40px;
 }
+
+/* fim do estilo base */
