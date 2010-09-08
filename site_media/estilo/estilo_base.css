@@ -1,4 +1,3 @@
-/* estilo base */
 body {
     padding: 0;
     margin: 0;
@@ -7,24 +6,16 @@ body {
 }
 
 h1 {
-	padding-left: 7px;
 	color: #00923f;
-	border: 1px solid #00923f;
-	/*border-left: 1px solid #00923f;*/
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-	-webkit-border-radius:5px;
-	border-radius:5px;
 }
 
 h2 {
-	padding-left: 7px !important;
 	color: #00923f;
 	margin:0;
 	padding:0;
 }
 
-.topo {
+#topo {
 	background-color: #00923f;
     height: 70px;
 	-moz-border-radius:5px;
@@ -33,20 +24,20 @@ h2 {
 	border-radius:5px;
 }
 
-.logo {
+#topo #logo {
     width: 300px;
     height: 70px;
 	float: left;
 }
 
-.logo img {
+#topo #logo img {
 	border: none;
 }
 
-.navegacao {
-	margin-left: 33%;
-	position: relative;
-	top: 15px;
+div.navegacao {
+    position: relative;
+    top: 15px;
+    margin-left: 33%;
 }
 
 ul#navegacao {
@@ -114,22 +105,14 @@ ul#navegacao li:hover {
 	
 }
 
-.corpo {
-    position: absolute;
+#conteudo {
+    width: 960px;
+    position: relative;
     left: 50%;
-    margin-left: -490px;
-	/*border: 1px solid red;*/
-    width: 980px;
-    /*width: auto;*/
+    margin-left: -481px;
 }
 
-.conteudo {
-	/*margin-left: 10%;*/
-	/*margin-right: 10%;*/
-	
-}
-
-.rodape {
+#rodape {
     background-color: #00923f;
     color: #ffffff;
     padding:5px;
@@ -142,25 +125,23 @@ ul#navegacao li:hover {
 	border-radius:5px;
 }
 
-.links_rodape {
+#rodape #links_rodape {
     /*float:left;*/
     /*width:450px;*/
     height:20px;
     text-align:center;
 }
 
-.links_rodape a{
+#rodape #links_rodape a{
     text-decoration:none;
     color:#ffffff;
     font-size: small;
 }
 
-.selo_django_powered {
+#rodape #selo_django_powered {
 	width: 100px;
 	height: 43px;
 	float: right;
 	position: relative;
 	top: -40px;
 }
-
-/* fim do estilo base */
