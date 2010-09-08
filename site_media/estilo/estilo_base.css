@@ -44,7 +44,7 @@ h2 {
 }
 
 .navegacao {
-	margin-left: 30%;
+	margin-left: 33%;
 	position: relative;
 	top: 15px;
 }
@@ -94,15 +94,17 @@ ul#navegacao li a {
     position: relative;
     text-align: center;
     text-decoration: none;
-    width:140px;
+    width:130px;
     font-variant: small-caps;
     font-weight: bold;
+    font-size: 14px;
     overflow: hidden;
 }
 
 ul#navegacao li a:hover{
 	color: #00923f;
 }
+
 ul#navegacao li:hover {
     background-color: #ffffff;
 	border: 1px solid #00923f;
@@ -112,9 +114,19 @@ ul#navegacao li:hover {
 	
 }
 
+.corpo {
+    position: absolute;
+    left: 50%;
+    margin-left: -490px;
+	/*border: 1px solid red;*/
+    width: 980px;
+    /*width: auto;*/
+}
+
 .conteudo {
-	margin-left: 10%;
-	margin-right: 10%;
+	/*margin-left: 10%;*/
+	/*margin-right: 10%;*/
+	
 }
 
 .rodape {
