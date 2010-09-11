@@ -62,7 +62,6 @@ ul#edicoes_realizadas li {
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-	border-radius:4px;
 	z-index: 2;
 }
 
@@ -76,13 +75,11 @@ ul#edicoes_realizadas li {
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-	border-radius:4px;
 	z-index: 2;
 }
 
 #fotos .titulo {
     margin-top: 10px;
-    /*margin-left: 10px;*/
     height: 25px;
     width: 150px;
     position: relative;
@@ -94,7 +91,6 @@ ul#edicoes_realizadas li {
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-    border-radius:4px;
 	z-index: 1;
 }
 
@@ -112,6 +108,5 @@ ul#edicoes_realizadas li {
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-    border-radius:4px;
 	z-index: 1;
 }

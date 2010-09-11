@@ -18,7 +18,6 @@ form input[type='text'] {
     -moz-border-radius:5px;
     -khtml-border-radius:5px;
     -webkit-border-radius:5px;
-    border-radius:5px;
     border: 1px solid #aaa9a9;
     height: 18px;
     width: 400px;
@@ -28,14 +27,12 @@ input[type='submit'] {
     -moz-border-radius:5px;
     -khtml-border-radius:5px;
     -webkit-border-radius:5px;
-    border-radius:5px;
 }
 
 #id_mensagem {
     -moz-border-radius:5px;
     -khtml-border-radius:5px;
     -webkit-border-radius:5px;
-    border-radius:5px;
     border: 1px solid #aaa9a9;
     width: 400px;
 }

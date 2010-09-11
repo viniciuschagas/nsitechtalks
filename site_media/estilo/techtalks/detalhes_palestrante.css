@@ -1,5 +1,4 @@
 #detalhes_palestrante {
-    /*margin: 10px;*/
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -7,13 +6,9 @@
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-	border-radius:4px;
 }
 
 #infos_palestrante {
-    /*border-top: 1px solid #00923f;*/
-    /*border-left: 1px solid #00923f;*/
-    /*border-right: 1px solid #00923f;*/
     margin-left: 155px;
     margin-right: 5px;
     padding-top: 8px;
@@ -21,15 +16,12 @@
 }
 
 #infos_palestrante .info {
-    /*border: 1px solid #ffffff;*/
     margin-bottom: 3px;
     padding: 5px;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
 	border-radius:4px;
-    /*background-color: #00923f;*/
-    /*color: #ffffff;*/
     color: #00923f;
 }
 
@@ -76,5 +68,4 @@
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-	border-radius:4px;
 }

@@ -6,7 +6,6 @@
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-	border-radius:4px;
     text-align: center;
     color: #ffffff;
     font-weight: bold;
@@ -14,29 +13,21 @@
 
 .titulo_equipe {
     height: 25px;
-    width: 390px;
-    position: relative;
-    top: 5px;
+    width: 430px;
 	padding-top: 8px !important;
     padding-left: 5px;
-    background-color: #00923f;
-    color: #ffffff;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
-    border-radius:4px;
-	z-index: 1;
+	color: #00923f;
+	/*border-bottom: 1px solid #00923f;*/
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 .equipe {
     margin-bottom: 10px;
     padding: 5px;
-    /*background-color: #00923f;*/
-    border: 1px solid #00923f;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
-	border-radius:4px;
 	z-index: 2;
 }
 
