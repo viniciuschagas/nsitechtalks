@@ -14,7 +14,7 @@ urlpatterns = patterns('',
     (r'^sucesso_contato/$','django.views.generic.simple.direct_to_template',
         {'template':'sucesso_contato.html'}),
     (r'^equipe/$','techtalks.views.equipe'),
-    (r'^filtrar_por_tag/(?P<tag>\w+)/$','techtalks.views.buscar_palestrar_por_tag'),
+    (r'^filtrar_por_tag/(?P<tag>[a-z0-9-]+)/$','techtalks.views.buscar_palestrar_por_tag'),
     
 )
 

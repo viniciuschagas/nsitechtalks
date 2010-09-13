@@ -31,7 +31,7 @@
 					<div>
 						Tags:
 						{% for palavra_chave in palestra.listar_palavras_chave %}
-							<span class="negrito"><a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.titulo %}">{{ palavra_chave }}</a></span>,
+							<span class="negrito"><a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.slug %}">{{ palavra_chave }}</a></span>,
 						{% endfor %}
 					</div>
 				</div>

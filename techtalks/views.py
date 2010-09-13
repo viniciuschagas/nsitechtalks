@@ -106,7 +106,7 @@ def equipe(request):
     )
     
 def buscar_palestrar_por_tag(request,tag):
-    palavra_chave = PalavraChave.objects.get(titulo=tag)
+    palavra_chave = PalavraChave.objects.get(slug=tag)
     palestras = Palestra.objects.filter(palavras_chave=palavra_chave)
     return render_to_response(
         'buscar_palestras_por_tag.html',
