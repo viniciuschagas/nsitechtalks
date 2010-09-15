@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from datetime import date
 from django.db import models
+from django.db.models import signals
+from django.template.defaultfilters import slugify
 from utils.pyslideshare.pyslideshare import pyslideshare
 from utils.pyslideshare_configurations import API_KEY, SECRET_KEY
 
@@ -26,9 +28,6 @@ class Edicao(models.Model):
         max_length=12,
         choices=STATUS,
         default='pre_cadastro')
-    #palestras = models.ManyToManyField('Palestra',blank=True,null=True)
-    #fotos = models.ManyToManyField('Foto',blank=True,null=True)
-    #videos = models.ManyToManyField('Video',blank=True,null=True)
     
     def __unicode__(self):
         titulo = str(self.id)+u'ª Edição - ('
@@ -46,7 +45,6 @@ class Edicao(models.Model):
     def listar_videos(self):
         return self.video_set.all()
         
-    #TODO:Talvez transformar em um método de classe
     def _retirar_outras_como_proxima(self):
         edicoes = Edicao.objects.all()
         for edicao in edicoes:
@@ -138,9 +136,15 @@ class Video(models.Model):
     
 class PalavraChave(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)
+    slug = models.SlugField(max_length=300, blank=True, null=True)
     
     def __unicode__(self):
         return self.titulo
+        
+def palavra_chave_pre_save(signal, instance, sender, **kwargs):
+    instance.slug = slugify(instance.titulo)
+    
+signals.pre_save.connect(palavra_chave_pre_save, sender=PalavraChave)
     
 class Palestrante(models.Model):
     nome = models.CharField(verbose_name='nome',max_length=100)

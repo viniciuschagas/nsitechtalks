@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
     <head>
-        <title>..:: NSI TECH TALKS - {% block titulo_pagina %}{% endblock titulo_pagina%} ::..</title>
+        <title>NSI TECH TALKS - {% block titulo_pagina %}{% endblock titulo_pagina%}</title>
         <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL}}/estilo/estilo_base.css"/>
         {% block estilo_extra %}
         {% endblock estilo_extra %}
@@ -11,8 +11,8 @@
         {% endblock scripts %}
     </head>
     <body>
-        <div class="topo">
-            <div class="logo">
+        <div id="topo">
+            <div id="logo">
                 <a href="/">
                     <img src="{{ MEDIA_URL }}/imagens/logo.png" alt="NSI TECH TALKS" title="NSI TECH TALKS"/>
                 </a>
@@ -37,22 +37,21 @@
                 </ul>
             </div>
         </div>
-        <div class="conteudo">
+        <div id="conteudo">
             {% block conteudo %}
-
             {% endblock conteudo %}
         </div>
-        <div class="rodape">
-            <div class="infos">
+        <div id="rodape">
+            <div id="infos">
                 <div>
                     NSI - Instituto Federal Fluminense - Núcleo de Pesquisa em Sistemas de Informação
                 </div>
-                <div class="links_rodape">
+                <div id="links_rodape">
                     <a href="/equipe/">Equipe NSI</a> |
                     <a href="/">Equipe do Site</a>
                 </div>
             </div>
-            <div class="selo_django_powered">
+            <div id="selo_django_powered">
                 <a href="http://www.djangoproject.com/">
                     <img src="{{ MEDIA_URL }}/imagens/djangopowered126x54.gif" style="border:0;width:100px;height:43px" alt="Powered by Django." title="Powered by Django." />
                 </a>
