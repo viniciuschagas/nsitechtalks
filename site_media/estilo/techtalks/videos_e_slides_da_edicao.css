@@ -4,19 +4,13 @@
 }
 
 .titulo {
-    margin-top: 10px;
-    /*margin-right: 10px;*/
-    height: 25px;
-    position: relative;
-    top: 5px;
+	height: 25px;
 	padding-top: 8px !important;
     padding-left: 5px;
-    background-color: #00923f;
-    color: #ffffff;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
-	z-index: 1;
+	color: #00923f;
+    font-size: 20px;
+	text-decoration: underline;
+	font-weight: bold;
 }
 
 .video_e_slide_container {
@@ -25,7 +19,7 @@
     padding-right: 3px;
     padding-top: 10px;
     /*padding-left: 5%;*/
-    border: 1px solid #00923f;
+    /*border-bottom: 1px solid #00923f;*/
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
