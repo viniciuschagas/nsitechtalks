@@ -110,6 +110,6 @@ def buscar_palestrar_por_tag(request,tag):
     palestras = Palestra.objects.filter(palavras_chave=palavra_chave)
     return render_to_response(
         'buscar_palestras_por_tag.html',
-        {'palestras':palestras,'tag':tag},
+        {'palestras':palestras,'tag':palavra_chave.titulo},
         context_instance=RequestContext(request)
     )
