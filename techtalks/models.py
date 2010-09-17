@@ -82,27 +82,29 @@ class Palestra(models.Model):
         return self.video_set.all()
         
     def retornar_slide_embeded(self):
-        api_key = API_KEY
-        secret_key = SECRET_KEY
-        slides_client = pyslideshare(locals(),verbose=False)
-        slide = slides_client.get_slideshow(slideshow_id=self.id_slideshare)
-        location = slide.items()[0][1]['Slideshow']['Location']['value']
-        embed_code = '<object id="__sse%s" width="350" height="292">\
-                        <param name="movie"\
-                            value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=%s&stripped_title=a" />\
-                        <param name="allowFullScreen" value="true"/>\
-                        <param name="allowScriptAccess" value="always"/>\
-                        <embed name="__sse%s"\
-                            src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=%s&stripped_title=a"\
-                            type="application/x-shockwave-flash"\
-                            allowscriptaccess="always"\
-                            allowfullscreen="true"\
-                            width="350"\
-                            height="292">\
-                        </embed>\
-                    </object>' % (self.id_slideshare, location, self.id_slideshare, location)
-        slide_url = slide.items()[0][1]['Slideshow']['Permalink']['value']
-        return (embed_code,slide_url)
+        if self.id_slideshare:
+            api_key = API_KEY
+            secret_key = SECRET_KEY
+            slides_client = pyslideshare(locals(),verbose=False)
+            slide = slides_client.get_slideshow(slideshow_id=self.id_slideshare)
+            location = slide.items()[0][1]['Slideshow']['Location']['value']
+            embed_code = '<object id="__sse%s" width="350" height="292">\
+                            <param name="movie"\
+                                value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=%s&stripped_title=a" />\
+                            <param name="allowFullScreen" value="true"/>\
+                            <param name="allowScriptAccess" value="always"/>\
+                            <embed name="__sse%s"\
+                                src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=%s&stripped_title=a"\
+                                type="application/x-shockwave-flash"\
+                                allowscriptaccess="always"\
+                                allowfullscreen="true"\
+                                width="350"\
+                                height="292">\
+                            </embed>\
+                        </object>' % (self.id_slideshare, location, self.id_slideshare, location)
+            slide_url = slide.items()[0][1]['Slideshow']['Permalink']['value']
+            return (embed_code,slide_url)
+        return None
     
 class Foto(models.Model):
     titulo = models.CharField(verbose_name='título',max_length=300)

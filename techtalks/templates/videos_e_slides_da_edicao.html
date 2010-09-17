@@ -15,13 +15,21 @@
             <div class="video_e_slide_container">
                 <div class="video_e_slide">
                     <div class="video">
-                        {{ palestra.listar_videos.0.retornar_embed|safe }}
+                        {% if palestra.listar_videos %}
+                            {{ palestra.listar_videos.0.retornar_embed|safe }}
+                        {% else %}
+                            <div class="sem_arquivo">Não existe vídeo cadastrado para esta palestra.</div>
+                        {% endif %}
                     </div>
                     <div class="slide_div">
-                        <div class="slide">{{ palestra.retornar_slide_embeded.0|safe }}</div>
-                        <div class="slide_url">
-                            <a href="{{ palestra.retornar_slide_embeded.1 }}">Link da apresentaçao no Slideshare</a>
-                        </div>
+                        {% if palestra.retornar_slide_embeded %}
+                            <div class="slide">{{ palestra.retornar_slide_embeded.0|safe }}</div>
+                            <div class="slide_url">
+                                <a href="{{ palestra.retornar_slide_embeded.1 }}">Link da apresentaçao no Slideshare</a>
+                            </div>
+                        {% else %}
+                            <div class="sem_arquivo">Não existe slide cadastrado para esta palestra.</div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

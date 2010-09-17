@@ -35,7 +35,6 @@
     padding-bottom: 3px !important;
     padding-top: 2px !important;
     color:#00923f;
-    font-weight: bold;
     float: left;
     width: 360px;
 }
@@ -52,6 +51,11 @@
 
 .slide_url a {
     color:#00923f;
+}
+
+.sem_arquivo {
+    color: #00923f;
+    font-size: 20px;
 }
 
 .pagination {
