@@ -1,26 +1,23 @@
 body {
     padding: 0;
     margin: 0;
-    background: transparent url("/site_media/imagens/bgGrad.gif") repeat-x scroll 0 0;
+    /*background: transparent url("/site_media/imagens/bgGrad.gif") repeat-x scroll 0 0;*/
     font-family: verdana;
 }
 
 h1 {
-	color: #00923f;
+	color: #69B92D;
 }
 
 h2 {
-	color: #00923f;
+	color: #69B92D;
 	margin:0;
 	padding:0;
 }
 
 #topo {
-	background-color: #00923f;
+	background-color: #DDDDDD;
     height: 70px;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-	-webkit-border-radius:5px;
 }
 
 #topo #logo {
@@ -35,14 +32,14 @@ h2 {
 
 div.navegacao {
     position: relative;
-    top: 15px;
+    top: 25px;
     margin-left: 33%;
 }
 
 ul#navegacao {
-    background-color: #00923f;
+    background-color: transparent;
     display: block;
-    height: 40px;
+    height: 20px;
     line-height: normal;
     list-style-image: none;
     list-style-position: outside;
@@ -51,21 +48,15 @@ ul#navegacao {
 	margin: 0px;
 	text-align: center;
     white-space: nowrap;
-    border-right: 1px solid green;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-	-webkit-border-radius:5px;
+    border-right: 1px solid #C3C3C3;
 }
 
 ul#navegacao li {
-    background-color: #00923f;
+    background-color: transparent;
     display: block;
     float: left;
-    height: 40px;
-    border-left: 1px solid green;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-	-webkit-border-radius:5px;
+    height: 20px;
+    border-left: 1px solid #C3C3C3;
 }
 
 ul#navegacao li#principal {
@@ -73,12 +64,12 @@ ul#navegacao li#principal {
 }
 
 ul#navegacao li a {
-    color: white;
+    color: #69B92D;
     display: block;
-    height: 40px;
+    height: 20px;
     left: 0px;
     top: 0px;
-    line-height: 40px;
+    line-height: 20px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -90,14 +81,11 @@ ul#navegacao li a {
 }
 
 ul#navegacao li a:hover{
-	color: #00923f;
+	color: #69B92D;
+	text-decoration: underline;
 }
 
 ul#navegacao li:hover {
-    background-color: #ffffff;
-	border: 1px solid #00923f;
-	position: relative;
-	top: -1px;
 	border-right: none !important;
 	
 }
@@ -110,27 +98,29 @@ ul#navegacao li:hover {
 }
 
 #rodape {
-    background-color: #00923f;
-    color: #ffffff;
+    background-color: #DDDDDD;
+    color: #69B92D;
     padding:5px;
     text-align:center;
     clear:left;
     font-size: small;
-	-moz-border-radius:5px;
-	-khtml-border-radius:5px;
-	-webkit-border-radius:5px;
+}
+
+#rodape #logo_iff {
+	float: left;
+	/*border: 1px solid #000000;*/
+	position: relative;
+	top: -3px;
 }
 
 #rodape #links_rodape {
-    /*float:left;*/
-    /*width:450px;*/
     height:20px;
     text-align:center;
 }
 
 #rodape #links_rodape a{
     text-decoration:none;
-    color:#ffffff;
+    color:#69B92D;
     font-size: small;
 }
 

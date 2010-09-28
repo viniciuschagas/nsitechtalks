@@ -6,20 +6,20 @@
 #dados {
     padding-top: 10px;
     padding-left: 10px;
-    color: #00923f;
+    color: #868686;
 }
 
-#dados_palestras {
+.dados_palestras {
     padding: 10px;
-    color: #00923f;
+    color: #868686;
 }
 
-#dados_palestras a {
+.dados_palestras a {
     text-decoration: none;
-    color: #00923f;
+    color: #868686;
 }
 
-#dados_palestras a:hover {
+.dados_palestras a:hover {
     text-decoration: underline;
 }
 
@@ -44,8 +44,8 @@
     top: 5px;
     padding-top: 8px !important;
     padding: 5px;
-    color: #ffffff;
-    background-color: #00923f;
+    color: #69B92D;
+    background-color: #DDDDDD;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -53,22 +53,18 @@
 
 .destaque {
     margin-bottom: 10px;
-    border: 1px solid #00923f;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
+    border: 1px solid #DDDDDD;
 }
 
 #destaque_palestras {
     margin-bottom: 10px;
     padding: 5px;
-    background-color: #00923f;
+    background-color: #DDDDDD;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
 	font-weight: bold;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
     text-align: center;
-    color: #ffffff;
+    color: #69B92D;
     font-weight: bold;
 }
 
@@ -77,7 +73,7 @@
 }
 
 #edicao_indefinida #texto {
-    color: #00923f;
+    color: #868686;
     font-size: 25px;
     width: 600px;
     position: relative;

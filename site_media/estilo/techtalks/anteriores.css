@@ -1,9 +1,9 @@
 ul#anteriores {
-    color: #00923f;
+    color: #69B92D;
 }
 
 ul#anteriores a {
-    color: #00923f;
+    color: #69B92D;
     font-weight: bold;
     text-decoration: none;
 }
@@ -24,11 +24,11 @@ ul#anteriores li {
 }
 
 .pagination .prev,.pagination .next {
-    color:#00923f;
+    color:#69B92D;
 }
 
 .pagination .page {
-    color:#00923f;
+    color:#69B92D;
     text-decoration: none;
 }
 
