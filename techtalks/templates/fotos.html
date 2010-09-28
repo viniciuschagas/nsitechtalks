@@ -1,0 +1,23 @@
+{% extends "pagina_base.html" %}
+{% load pagination_tags %}
+
+{% block titulo_pagina%}Arquivos de Edições Realizadas{% endblock titulo_pagina %}
+
+{% block estilo_extra %}
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/fotos.css" />
+{% endblock estilo_extra %}
+
+{% block conteudo %}
+    <h1>Fotos de Edições Realizadas</h1>
+    {% if edicoes_realizadas %}
+        {% autopaginate edicoes_realizadas 10 %}
+        <ul id="edicoes_realizadas">
+            {%for edicao_realizada in edicoes_realizadas%}
+                <li><a href="{% url techtalks.views.fotos_edicao edicao_realizada.id %}">{{edicao_realizada.id}}ª Edição - {{ edicao_realizada.data|date:"d/m/Y" }}</a></li>
+            {%endfor%}
+        </ul>
+        {% paginate %}
+    {% else %}
+        <h1>Ainda não existem edições realizadas.</h1>
+    {% endif %}
+{% endblock conteudo %}

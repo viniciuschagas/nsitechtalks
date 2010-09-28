@@ -1,0 +1,108 @@
+#edicao {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#dados {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #868686;
+}
+
+.dados_palestras {
+    padding: 10px;
+    color: #868686;
+}
+
+.dados_palestras a {
+    text-decoration: none;
+    color: #868686;
+}
+
+.dados_palestras a:hover {
+    text-decoration: underline;
+}
+
+.negrito {
+    color: #555555;
+}
+
+#cartaz {
+    width: 400px;
+    padding: 10px;
+}
+
+#cartaz img {
+    width: 400px;
+}
+
+.titulo_destaque {
+    margin-top: 10px;
+    height: 25px;
+    width: auto;
+    position: relative;
+    top: 5px;
+    padding-top: 8px !important;
+    padding: 5px;
+    color: #69B92D;
+    background-color: #DDDDDD;
+    -moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+.destaque {
+    margin-bottom: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+#destaque_palestras {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #DDDDDD;
+    border-top: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+	font-weight: bold;
+    text-align: center;
+    color: #69B92D;
+    font-weight: bold;
+}
+
+.video_e_slide_container {
+    margin-bottom: 10px;
+    padding-right: 3px;
+    padding-top: 10px;
+	padding-left: 10px;
+}
+
+.video_e_slide {
+    margin:0 auto;
+}
+
+.video {
+    padding-right: 3px;
+    padding-bottom: 3px !important;
+    padding-top: 2px !important;
+    color:#868686;
+    float: left;
+    width: 360px;
+}
+
+.slide_div {
+    width: 360px;
+    margin-left: 365px;
+    margin-top: 2px;
+}
+
+.slide_url {
+    padding-left: 5px;
+}
+
+.slide_url a {
+    color:#868686;
+}
+
+.sem_arquivo {
+    color: #868686;
+    font-size: 20px;
+}

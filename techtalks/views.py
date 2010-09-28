@@ -49,10 +49,10 @@ def detalhes_palestra(request, palestra_id):
         context_instance=RequestContext(request)
     )
     
-def arquivos(request):
+def fotos(request):
     edicoes_realizadas = Edicao.objects.filter(status='realizada').order_by("id")
     return render_to_response(
-        'arquivos.html',
+        'fotos.html',
         {'edicoes_realizadas':edicoes_realizadas},
         context_instance=RequestContext(request)
     )

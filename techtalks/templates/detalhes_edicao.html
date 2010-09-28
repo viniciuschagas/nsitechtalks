@@ -10,6 +10,68 @@
 {% block conteudo %}
     <div id="texto_principal">
         <h1>Detalhes de Edição Anterior</h1>
-        {% include "edicao_em_destaque.html" %}
+        <h2>{{edicao.id}}ª Edição - {{ edicao.data|date:"d/m/Y" }}</h2>
+        <div id="edicao">
+            <div class="titulo_destaque">Informações Principais</div>
+            <div class="destaque">
+                <div id="dados">
+                    <div><span class="negrito">Data: </span>{{ edicao.data|date:"d/m/Y" }}</div>
+                    <div><span class="negrito">Hora: </span>{{ edicao.hora }}</div>
+                    <div><span class="negrito">Local: </span>{{ edicao.local }}</div>
+                </div>
+                <div id="cartaz">
+                    <img src="{{ MEDIA_URL }}/{{ edicao.cartaz }}" />
+                </div>
+            </div>
+            <div id="destaque_palestras">Palestras</div>
+            <div id="palestra">
+            {% for palestra in edicao.listar_palestras %}
+                <div class="titulo_destaque">{{ palestra.titulo}}</div>
+                <div class="destaque">
+                    <div class="dados_palestras">
+                        <div><span class="negrito">Título: </span>{{ palestra.titulo }}</span></div>
+                        <div><span class="negrito">Resumo: </span>{{ palestra.resumo|linebreaksbr }}</div>
+                        <div>
+                            <span class="negrito">Palestrante(s):</span>
+                            {% for palestrante in palestra.listar_palestrantes %}
+                                <a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a>
+                                {% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <span class="negrito">Tags:</span>
+                            {% for palavra_chave in palestra.listar_palavras_chave %}
+                                <a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.slug %}">{{ palavra_chave }}</a>
+                                {% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="arquivos">
+                        <div class="video_e_slide_container">
+                            <div class="video_e_slide">
+                                <div class="video">
+                                    {% if palestra.listar_videos %}
+                                        {{ palestra.listar_videos.0.retornar_embed|safe }}
+                                    {% else %}
+                                        <div class="sem_arquivo">Não existe vídeo cadastrado para esta palestra.</div>
+                                    {% endif %}
+                                </div>
+                                <div class="slide_div">
+                                    {% if palestra.retornar_slide_embeded %}
+                                        <div class="slide">{{ palestra.retornar_slide_embeded.0|safe }}</div>
+                                        <div class="slide_url">
+                                            <a href="{{ palestra.retornar_slide_embeded.1 }}">Link da apresentaçao no Slideshare</a>
+                                        </div>
+                                    {% else %}
+                                        <div class="sem_arquivo">Não existe slide cadastrado para esta palestra.</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
     </div>
 {% endblock conteudo %}

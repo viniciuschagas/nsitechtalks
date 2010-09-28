@@ -12,24 +12,44 @@
     <div class="titulo_destaque">{{ palestra.titulo}}</div>
     <div class="destaque">
         <div id="dados_palestras">
-            <div>Título: <span class="negrito">{{ palestra.titulo }}</span></div>
-            <div>Resumo: <span class="negrito">{{ palestra.resumo|linebreaksbr }}</div>
-            {% ifnotequal palestra.link_slideshare '' %}
-                <div>
-                    Slides: <span class="negrito"><a href="{{ palestra.link_slideshare }}">{{ palestra.link_slideshare }}</a></span>
-                </div>
-            {% endifnotequal %}
+            <div><span class="negrito">Título: </span>{{ palestra.titulo }}</div>
+            <div><span class="negrito">Resumo: </span>{{ palestra.resumo|linebreaksbr }}</div>
             <div>
-                Palestrante(s):
+                <span class="negrito">Palestrante(s):</span>
                 {% for palestrante in palestra.listar_palestrantes %}
-                    <span class="negrito"><a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a></span>,
+                    <a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a>
+                    {% if not forloop.last %},{% endif %}
                 {% endfor %}
             </div>
             <div>
-                Tags:
+                <span class="negrito">Tags:</span>
                 {% for palavra_chave in palestra.listar_palavras_chave %}
-                    <span class="negrito"><a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.slug %}">{{ palavra_chave }}</a></span>,
+                    <a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.slug %}">{{ palavra_chave }}</a>
+                    {% if not forloop.last %},{% endif %}
                 {% endfor %}
+            </div>
+            <div class="arquivos">
+                <div class="video_e_slide_container">
+                    <div class="video_e_slide">
+                        <div class="video">
+                            {% if palestra.listar_videos %}
+                                {{ palestra.listar_videos.0.retornar_embed|safe }}
+                            {% else %}
+                                <div class="sem_arquivo">Não existe vídeo cadastrado para esta palestra.</div>
+                            {% endif %}
+                        </div>
+                        <div class="slide_div">
+                            {% if palestra.retornar_slide_embeded %}
+                                <div class="slide">{{ palestra.retornar_slide_embeded.0|safe }}</div>
+                                <div class="slide_url">
+                                    <a href="{{ palestra.retornar_slide_embeded.1 }}">Link da apresentaçao no Slideshare</a>
+                                </div>
+                            {% else %}
+                                <div class="sem_arquivo">Não existe slide cadastrado para esta palestra.</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

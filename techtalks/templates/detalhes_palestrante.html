@@ -7,20 +7,19 @@
 {% endblock estilo_extra %}
 
 {% block conteudo %}
-    <!--<h1>Detalhes do Palestrante</h1>-->
     <div id="destaque_titulo">Detalhes do Palestrante</div>
     <div id="detalhes_palestrante">
         <div id="foto_palestrante">
             <img src="{{ MEDIA_URL}}/{{ palestrante.foto }}" />
         </div>
         <div id="infos_palestrante">
-            <div class="info"><span class="titulo_info">Nome:</span> <span class="destaque">{{ palestrante.nome }}</span></div>
-            <div class="info"><span class="titulo_info">O que faz:</span> <span class="destaque">{{ palestrante.o_que_faz|linebreaksbr }}</span></div>
-            <div class="info"><span class="titulo_info">Resumo da vida e obra:</span> <span class="destaque">{{ palestrante.resumo|linebreaksbr }}</span></div>
-            <div class="info"><span class="titulo_info">Site:</span> <span class="destaque"><a href="{{ palestrante.site }}">{{ palestrante.site }}</a></span></div>
-            <div class="info"><span class="titulo_info">github:</span> <span class="destaque"><a href="{{ palestrante.github }}">{{ palestrante.github }}</a></span></div>
-            <div class="info"><span class="titulo_info">Twitter:</span> <span class="destaque"><a href="{{ palestrante.twitter }}">{{ palestrante.twitter }}</a></span></div>
-            <div class="info"><span class="titulo_info">Slideshare:</span> <span class="destaque"><a href="{{ palestrante.slideshare }}">{{ palestrante.slideshare }}</span></a></div>
+            <div class="info"><span class="destaque">Nome:</span> {{ palestrante.nome }}</div>
+            <div class="info"><span class="destaque">O que faz:</span> {{ palestrante.o_que_faz|linebreaksbr }}</div>
+            <div class="info"><span class="destaque">Resumo da vida e obra:</span> {{ palestrante.resumo|linebreaksbr }}</div>
+            <div class="info"><span class="destaque">Site:</span><a href="{{ palestrante.site }}"> {{ palestrante.site }}</a></div>
+            <div class="info"><span class="destaque">github:</span><a href="{{ palestrante.github }}"> {{ palestrante.github }}</a></div>
+            <div class="info"><span class="destaque">Twitter:</span><a href="{{ palestrante.twitter }}"> {{ palestrante.twitter }}</a></div>
+            <div class="info"><span class="destaque">Slideshare:</span><a href="{{ palestrante.slideshare }}"> {{ palestrante.slideshare }}</a></div>
         </div>
     </div>
 {% endblock conteudo %}

@@ -1,13 +1,12 @@
 .fomentador {
     margin-bottom: 10px;
     padding: 5px;
-    background-color: #00923f;
+    background-color: #DDDDDD;
+	border-top: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+	color: #69B92D;
 	font-weight: bold;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
     text-align: center;
-    color: #ffffff;
     font-weight: bold;
 }
 
@@ -16,8 +15,7 @@
     width: 430px;
 	padding-top: 8px !important;
     padding-left: 5px;
-	color: #00923f;
-	/*border-bottom: 1px solid #00923f;*/
+	color: #69B92D;
 	text-decoration: underline;
 	font-weight: bold;
 }
@@ -25,9 +23,6 @@
 .equipe {
     margin-bottom: 10px;
     padding: 5px;
-    -moz-border-radius:4px;
-	-khtml-border-radius:4px;
-	-webkit-border-radius:4px;
 	z-index: 2;
 }
 
@@ -38,5 +33,5 @@
     padding-bottom: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    color: #00923f;
+    color: #868686;
 }

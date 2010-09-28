@@ -1,26 +1,18 @@
-.resultados {
-    padding-left: 7px;
-    padding-right: 7px;
-    padding-bottom: 7px;
-}
-
-ul#resultados {
+ul#edicoes_realizadas {
     color: #69B92D;
-    padding: 0;
-    margin: 0;
 }
 
-ul#resultados a {
+ul#edicoes_realizadas a {
     color: #69B92D;
     font-weight: bold;
     text-decoration: none;
 }
 
-ul#resultados a:hover {
+ul#edicoes_realizadas a:hover {
     text-decoration: underline;
 }
 
-ul#resultados li {
+ul#edicoes_realizadas li {
     padding-bottom: 5px;
 }
 
