@@ -6,9 +6,9 @@
 		<div class="titulo_destaque">Informações Principais</div>
 		<div class="destaque">
 			<div id="dados">
-				<div>Data: <span class="negrito">{{ edicao.data|date:"d/m/Y" }}</span></div>
-				<div>Hora: <span class="negrito">{{ edicao.hora }}</span></div>
-				<div>Local: <span class="negrito">{{ edicao.local }}</span></div>
+				<div><span class="negrito">Data: </span>{{ edicao.data|date:"d/m/Y" }}</div>
+				<div><span class="negrito">Hora: </span>{{ edicao.hora }}</div>
+				<div><span class="negrito">Local: </span>{{ edicao.local }}</div>
 			</div>
 			<div id="cartaz">
 				<img src="{{ MEDIA_URL }}/{{ edicao.cartaz }}" />
@@ -20,18 +20,20 @@
 			<div class="titulo_destaque">{{ palestra.titulo}}</div>
 			<div class="destaque">
 				<div class="dados_palestras">
-					<div>Título: <span class="negrito">{{ palestra.titulo }}</span></div>
-					<div>Resumo: <span class="negrito">{{ palestra.resumo|linebreaksbr }}</div>
+					<div><span class="negrito">Título: </span>{{ palestra.titulo }}</span></div>
+					<div><span class="negrito">Resumo: </span>{{ palestra.resumo|linebreaksbr }}</div>
 					<div>
-						Palestrante(s):
+						<span class="negrito">Palestrante(s):</span>
 						{% for palestrante in palestra.listar_palestrantes %}
-							<span class="negrito"><a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a></span>,
+							<a href="{% url techtalks.views.palestrante palestrante.id %}">{{ palestrante.nome }}</a>
+							{% if not forloop.last %},{% endif %}
 						{% endfor %}
 					</div>
 					<div>
-						Tags:
+						<span class="negrito">Tags:</span>
 						{% for palavra_chave in palestra.listar_palavras_chave %}
-							<span class="negrito"><a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.slug %}">{{ palavra_chave }}</a></span>,
+							<a href="{% url techtalks.views.buscar_palestrar_por_tag palavra_chave.slug %}">{{ palavra_chave }}</a>
+							{% if not forloop.last %},{% endif %}
 						{% endfor %}
 					</div>
 				</div>
