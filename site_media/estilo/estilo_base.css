@@ -1,7 +1,6 @@
 body {
     padding: 0;
     margin: 0;
-    /*background: transparent url("/site_media/imagens/bgGrad.gif") repeat-x scroll 0 0;*/
     font-family: verdana;
 }
 
@@ -32,14 +31,14 @@ h2 {
 
 div.navegacao {
     position: relative;
-    top: 25px;
+    top: 15px;
     margin-left: 33%;
 }
 
 ul#navegacao {
     background-color: transparent;
     display: block;
-    height: 20px;
+    height: 40px;
     line-height: normal;
     list-style-image: none;
     list-style-position: outside;
@@ -48,6 +47,9 @@ ul#navegacao {
 	margin: 0px;
 	text-align: center;
     white-space: nowrap;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
     border-right: 1px solid #C3C3C3;
 }
 
@@ -55,7 +57,11 @@ ul#navegacao li {
     background-color: transparent;
     display: block;
     float: left;
-    height: 20px;
+    height: 40px;
+	height: 40px;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
     border-left: 1px solid #C3C3C3;
 }
 
@@ -66,10 +72,10 @@ ul#navegacao li#principal {
 ul#navegacao li a {
     color: #69B92D;
     display: block;
-    height: 20px;
+    height: 40px;
     left: 0px;
     top: 0px;
-    line-height: 20px;
+    line-height: 40px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -81,11 +87,14 @@ ul#navegacao li a {
 }
 
 ul#navegacao li a:hover{
-	color: #69B92D;
-	text-decoration: underline;
+	color: #ffffff;
 }
 
 ul#navegacao li:hover {
+	background-color: #69B92D;
+	border: 1px solid #69B92D;
+	position: relative;
+	top: -1px;
 	border-right: none !important;
 	
 }
@@ -108,7 +117,6 @@ ul#navegacao li:hover {
 
 #rodape #logo_iff {
 	float: left;
-	/*border: 1px solid #000000;*/
 	position: relative;
 	top: -3px;
 }
