@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/estilo/techtalks/detalhes_edicao.css" />
 {% endblock estilo_extra %}
 
+{% block scripts %}
+    <script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/jquery-1.4.3.min.js"></script>
+    <script type="text/javascript" src="{{ MEDIA_URL }}/javascripts/carregar_video_e_slide.js"></script>
+{% endblock scripts %}
+
 {% block conteudo %}
     <div id="texto_principal">
         <h1>Detalhes de Edição Anterior</h1>
@@ -49,19 +54,23 @@
                     <div class="arquivos">
                         <div class="video_e_slide_container">
                             <div class="video_e_slide">
-                                <div class="video">
-                                    {% if palestra.listar_videos %}
-                                        {{ palestra.listar_videos.0.retornar_embed|safe }}
-                                    {% else %}
+                                {% if palestra.listar_videos %}
+                                    <script type="text/javascript">
+                                        carregar_video({{ palestra.id }},'video_'+{{ palestra.id }});
+                                    </script>
+                                    <div class="video" id="video_{{ palestra.id }}"></div>
+                                {% else %}
+                                    <div class="video">
                                         <div class="sem_arquivo">Não existe vídeo cadastrado para esta palestra.</div>
-                                    {% endif %}
-                                </div>
+                                    </div>
+                                {% endif %}
                                 <div class="slide_div">
-                                    {% if palestra.retornar_slide_embeded %}
-                                        <div class="slide">{{ palestra.retornar_slide_embeded.0|safe }}</div>
-                                        <div class="slide_url">
-                                            <a href="{{ palestra.retornar_slide_embeded.1 }}">Link da apresentaçao no Slideshare</a>
-                                        </div>
+                                    {% if palestra.id_slideshare %}
+                                        <script text="text/javascript">
+                                            carregar_slide({{ palestra.id}},'slide_'+{{ palestra.id}},'slide_url_'+{{ palestra.id}});
+                                        </script>
+                                        <div class="slide" id="slide_{{ palestra.id}}"></div>
+                                        <div class="slide_url" id="slide_url_{{ palestra.id}}"></div>
                                     {% else %}
                                         <div class="sem_arquivo">Não existe slide cadastrado para esta palestra.</div>
                                     {% endif %}

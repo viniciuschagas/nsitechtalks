@@ -3,6 +3,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.mail import send_mail
 from django.http import HttpResponseRedirect, HttpResponse
+from django.utils import simplejson
 from models import Edicao, Palestrante, PalavraChave, Palestra
 from forms import FormularioDeContato
 
@@ -66,14 +67,37 @@ def fotos_edicao(request,edicao_id):
         context_instance=RequestContext(request)
     )
 
-def videos_e_slides_da_edicao(request,edicao_id):
-    edicao = Edicao.objects.get(id=edicao_id)
-    palestras = edicao.listar_palestras()
-    return render_to_response(
-        'videos_e_slides_da_edicao.html',
-        {'palestras':palestras,'edicao':edicao},
-        context_instance=RequestContext(request)
+#def videos_e_slides_da_edicao(request,edicao_id):
+#    edicao = Edicao.objects.get(id=edicao_id)
+#    palestras = edicao.listar_palestras()
+#    return render_to_response(
+#        'videos_e_slides_da_edicao.html',
+#        {'palestras':palestras,'edicao':edicao},
+#        context_instance=RequestContext(request)
+#    )
+
+def retornar_video_embed(request):
+    id_da_palestra = request.POST.get('id_da_palestra')
+    palestra = Palestra.objects.get(id=id_da_palestra)
+    resposta = simplejson.dumps(
+        [{
+            'embed': palestra.listar_videos()[0].retornar_embed(),
+        }],
+        ensure_ascii = False
     )
+    return HttpResponse(resposta, mimetype = "aplication/json")
+
+def retornar_slide_embed_e_url(request):
+    id_da_palestra = request.POST.get('id_da_palestra')
+    palestra = Palestra.objects.get(id=id_da_palestra)
+    resposta = simplejson.dumps(
+        [{
+            'embed': palestra.retornar_slide_embeded()[0],
+            'url': palestra.retornar_slide_embeded()[1]
+        }],
+        ensure_ascii = False
+    )
+    return HttpResponse(resposta, mimetype = "aplication/json")
     
 def contato(request):
     if request.method  == 'POST':
