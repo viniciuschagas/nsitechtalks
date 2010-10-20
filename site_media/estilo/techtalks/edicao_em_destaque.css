@@ -44,7 +44,7 @@
     top: 5px;
     padding-top: 8px !important;
     padding: 5px;
-    color: #69B92D;
+    color: #555555;
     background-color: #DDDDDD;
     -moz-border-radius:4px;
 	-khtml-border-radius:4px;
@@ -64,7 +64,7 @@
     border-bottom: 1px solid #CCCCCC;
 	font-weight: bold;
     text-align: center;
-    color: #69B92D;
+    color: #555555;
     font-weight: bold;
 }
 
